@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Sistema de Casarões Históricos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Visão Geral do Projeto
 
-## Available Scripts
+Este projeto é um sistema web para cadastrar, gerenciar e visualizar casarões históricos. O objetivo é permitir que visitantes possam pesquisar informações sobre casarões e que administradores possam gerenciar o conteúdo do sistema. Usuários registrados têm acesso a funcionalidades adicionais, como personalizar preferências do sistema e visualizar mais informações detalhadas sobre cada casarão.
 
-In the project directory, you can run:
+## Funcionalidades Principais
 
-### `npm start`
+- **Busca de Casarões:** Visitantes e usuários registrados podem pesquisar casarões históricos por nome.
+- **Cadastro de Casarões:** Administradores podem adicionar novos casarões com informações detalhadas.
+- **Visualização de Casarões:** Exibição de informações como fotos e descrição de cada casarão.
+- **Gerenciamento de Usuários:** Administradores podem gerenciar o acesso de usuários ao sistema.
+- **Autenticação:** Usuários podem se registrar e fazer login no sistema.
+- **Configurações de Usuário:** Usuários registrados podem alterar preferências, como temas (dark/light) e notificações.
+- **Edição de Perfis:** Usuários podem editar suas informações de perfil, incluindo upload de fotos.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Requisitos Funcionais
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- O sistema deve permitir que os usuários façam login e se cadastrem.
+- O sistema deve permitir que os visitantes pesquisem casarões sem a necessidade de login.
+- Usuários registrados devem ter a opção de configurar suas preferências (modo escuro/claro, notificações).
+- O administrador deve ser capaz de cadastrar, editar e excluir casarões.
+- O sistema deve permitir a visualização de detalhes do casarão, como imagem, descrição e histórico.
+- O administrador deve poder gerenciar usuários (ativar, desativar ou excluir contas).
+- O sistema deve permitir a navegação responsiva em diferentes dispositivos.
 
-### `npm test`
+## Requisitos Não Funcionais
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- O sistema deve ser responsivo e acessível em dispositivos móveis e desktop.
+- O tempo de resposta para pesquisas de casarões não deve exceder 2 segundos.
+- O sistema deve garantir que apenas administradores possam alterar o conteúdo de casarões cadastrados.
+- O sistema deve garantir a segurança dos dados de usuário com autenticação baseada em token (JWT).
+- O sistema deve ser escalável para suportar um grande número de usuários simultâneos.
+- O upload de imagens para perfis e casarões deve ser limitado a formatos PNG e JPEG.
 
-### `npm run build`
+## Tecnologias Utilizadas
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Frontend:** React
+- **Backend:** Node.js
+- **Banco de Dados:** SQL (MySQL ou PostgreSQL)
