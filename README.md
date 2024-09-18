@@ -44,5 +44,7 @@ O upload de imagens para perfis e casarões deve ser limitado a formatos PNG e J
 Tecnologias Utilizadas
 
 Front-end: React
+
 Back-end: Node.js
+
 Banco de Dados: SQL
