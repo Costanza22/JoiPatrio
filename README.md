@@ -158,9 +158,13 @@ A API seria composta por diversas rotas REST, como:
 **Exemplo de Fluxo Completo no Diagrama de Containers:**
 
 **Um Visitante acessa a página inicial no Frontend (React).
+
 O Frontend se comunica com o Backend (Node.js) para realizar uma pesquisa de casarões.
+
 O Backend consulta o Banco de Dados e retorna os resultados para o Frontend, que exibe ao usuário.
+
 Um Usuário Registrado faz login no sistema, o que aciona o Serviço de Autenticação (JWT) para validar suas credenciais.
+
 Um Administrador acessa as funcionalidades de gerenciamento de usuários e casarões, enviando requisições via Backend para o Banco de Dados.**
 
 **Referências:**
