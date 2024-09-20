@@ -126,7 +126,7 @@ Banco de Dados (MySQL/PostgreSQL): Armazena os dados dos casarões, usuários, p
 
 Serviços Externos (JWT para Autenticação): Garantia de segurança e autorização.
 
-Exemplo de Fluxo Completo no Diagrama de Containers:
+**Exemplo de Fluxo Completo no Diagrama de Containers:**
 
 **Um Visitante acessa a página inicial no Frontend (React).
 O Frontend se comunica com o Backend (Node.js) para realizar uma pesquisa de casarões.
