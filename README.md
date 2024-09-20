@@ -65,6 +65,8 @@ Plataforma de conteinerização: Docker
 
 CI/CD: Github Actions
 
+Ferramentas de análise de código: SonarQube
+
 **Diagrama de Casos de Uso** 
 
 ![CosPatrio drawio](https://github.com/user-attachments/assets/4fc5e48b-07d5-457d-80ac-d8af754875de)
