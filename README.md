@@ -148,6 +148,8 @@ POST /auth/login – para autenticar usuários.
 PUT /usuario/:id – para atualizar o perfil do usuário.
 Backend (Node.js + Express): O backend recebe essas requisições e responde com os dados ou realiza ações como autenticação, consulta ou modificação no banco de dados.
 
+**API do Google Maps: Para criar um mapa Virtual com a localização de cada casarão**
+
 A API seria composta por diversas rotas REST, como:
 /auth para autenticação e registro de usuários.
 /casaroes para busca, cadastro e gerenciamento de casarões.
@@ -165,6 +167,8 @@ Um Administrador acessa as funcionalidades de gerenciamento de usuários e casar
 1. [Lista de Imóveis Protegidos Culturalmente de Joinville](https://www.joinville.sc.gov.br/wp-content/uploads/2023/11/Lista-de-Imoveis-com-Protecao-Cultural-novembro-2023.pdf)
 2. https://www.patrimoniocultural.pr.gov.br/Curitiba
 
+**Trello**
+https://trello.com/b/tn4lqws7/joipatrio
 
 
 
