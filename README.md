@@ -1,7 +1,10 @@
 
 **Sistema Web de Casarões Históricos**
 
-Visão Geral do Projeto
+<img width="1233" alt="reactweb" src="https://github.com/user-attachments/assets/b1f26b67-03ba-4a30-a103-2d28775b6fb6">
+
+
+**Visão Geral do Projeto**
 
 Este projeto é um sistema web desenvolvido em React para cadastrar, gerenciar e visualizar casarões históricos em Joinville. O objetivo é proporcionar aos visitantes uma plataforma onde possam pesquisar informações sobre casarões históricos e permitir que administradores gerenciem o conteúdo do sistema. Usuários registrados têm acesso a funcionalidades adicionais, como personalizar preferências e visualizar informações detalhadas sobre cada casarão.
 
@@ -122,7 +125,7 @@ Frontend (React): Interface do usuário, exibe informações e permite interaç�
 
 Backend (Node.js + Express): Lógica do sistema, autenticação, requisições CRUD (criação, leitura, atualização, exclusão).
 
-Banco de Dados (MySQL/PostgreSQL): Armazena os dados dos casarões, usuários, preferências.
+Banco de Dados (MySQL): Armazena os dados dos casarões, usuários, preferências.
 
 Serviços Externos (JWT para Autenticação): Garantia de segurança e autorização.
 
