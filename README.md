@@ -44,7 +44,6 @@ O upload de imagens para perfis e casarões deve ser limitado a formatos PNG e J
 
 **Diagrama de Casos de Uso 
 
-![DiagramaCasosdeUso]("./src/images/CosPatrio.drawio")
 
 (Descrição)**
 
