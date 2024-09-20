@@ -1,4 +1,6 @@
 
+**Joi Patrio**
+
 **Sistema Web de Casarões Históricos**
 
 <img width="1233" alt="reactweb" src="https://github.com/user-attachments/assets/b1f26b67-03ba-4a30-a103-2d28775b6fb6">
@@ -58,6 +60,8 @@ Front-end: React
 Back-end: Node.js
 
 Banco de Dados: SQL
+
+Plataforma de conteinerização: Docker
 
 **Diagrama de Casos de Uso** 
 
