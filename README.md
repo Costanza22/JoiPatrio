@@ -42,6 +42,14 @@ O sistema deve garantir a segurança dos dados de usuário com autenticação ba
 O sistema deve ser escalável para suportar um grande número de usuários simultâneos.
 O upload de imagens para perfis e casarões deve ser limitado a formatos PNG e JPEG.
 
+**Tecnologias Utilizadas**
+
+Front-end: React
+
+Back-end: Node.js
+
+Banco de Dados: SQL
+
 **Diagrama de Casos de Uso 
 
 ![CosPatrio drawio](https://github.com/user-attachments/assets/4fc5e48b-07d5-457d-80ac-d8af754875de)
@@ -102,10 +110,28 @@ Ator: Usuário Registrado
 
 Descrição: Permite que os usuários editem suas informações de perfil, incluindo upload de fotos.
 
-**Tecnologias Utilizadas**
+**Modelagem C4**
 
-Front-end: React
+<img width="584" alt="C4" src="https://github.com/user-attachments/assets/43d7f3e2-3d5b-45b8-a857-b6b34132ec80">
 
-Back-end: Node.js
+**Diagrama de Containers (Resumo):**
 
-Banco de Dados: SQL
+Atores Externos: Visitante, Usuário Registrado, Administrador.
+
+Frontend (React): Interface do usuário, exibe informações e permite interação.
+
+Backend (Node.js + Express): Lógica do sistema, autenticação, requisições CRUD (criação, leitura, atualização, exclusão).
+
+Banco de Dados (MySQL/PostgreSQL): Armazena os dados dos casarões, usuários, preferências.
+
+Serviços Externos (JWT para Autenticação): Garantia de segurança e autorização.
+
+Exemplo de Fluxo Completo no Diagrama de Containers:
+
+**Um Visitante acessa a página inicial no Frontend (React).
+O Frontend se comunica com o Backend (Node.js) para realizar uma pesquisa de casarões.
+O Backend consulta o Banco de Dados e retorna os resultados para o Frontend, que exibe ao usuário.
+Um Usuário Registrado faz login no sistema, o que aciona o Serviço de Autenticação (JWT) para validar suas credenciais.
+Um Administrador acessa as funcionalidades de gerenciamento de usuários e casarões, enviando requisições via Backend para o Banco de Dados.**
+
+
