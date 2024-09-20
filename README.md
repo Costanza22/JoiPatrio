@@ -42,7 +42,11 @@ O sistema deve garantir a segurança dos dados de usuário com autenticação ba
 O sistema deve ser escalável para suportar um grande número de usuários simultâneos.
 O upload de imagens para perfis e casarões deve ser limitado a formatos PNG e JPEG.
 
-**Diagrama de Casos de Uso (Descrição)**
+**Diagrama de Casos de Uso 
+
+![DiagramaCasosdeUso]("C:\Users\Frida\Downloads\CosPatrio.drawio.png")
+
+(Descrição)**
 
 **Atores:**
 
