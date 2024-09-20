@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import Modal from 'react-modal';
 import { BsPersonArmsUp } from 'react-icons/bs';
 import { FaSearch, FaQuestionCircle, FaWhatsapp } from 'react-icons/fa';
-import { FcAbout } from 'react-icons/fc';
+import { FcAbout } from 'react-icons/fc'; // Importando o ícone
 import Settings from './Settings';
 import EditProfile from './EditProfile';
 import './Navbar.css';
+
+Modal.setAppElement('#root'); // Para acessibilidade
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -14,13 +17,12 @@ const Navbar = () => {
   const [showEditProfile, setShowEditProfile] = useState(false);
   const [showQuestionModal, setShowQuestionModal] = useState(false);
   const [question, setQuestion] = useState('');
-  const [showWhatsAppContainer, setShowWhatsAppContainer] = useState(false);
+  const [showWhatsAppContainer, setShowWhatsAppContainer] = useState(false); // Estado para WhatsApp
   const [showAbout, setShowAbout] = useState(false);
 
-  // Estados para controle de login
-  const [showLogin, setShowLogin] = useState(false);
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  // Estados para o modal de login/cadastro
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [isLogin, setIsLogin] = useState(true);
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
@@ -49,7 +51,7 @@ const Navbar = () => {
   };
 
   const handleWhatsAppClick = () => {
-    setShowWhatsAppContainer(!showWhatsAppContainer);
+    setShowWhatsAppContainer(!showWhatsAppContainer); // Alterna a visibilidade do container do WhatsApp
   };
 
   const handleQuestionModalOpen = () => setShowQuestionModal(true);
@@ -66,19 +68,11 @@ const Navbar = () => {
     setShowAbout(!showAbout);
   };
 
-  const handleLoginToggle = () => {
-    setShowLogin(!showLogin);
-    setDropdownOpen(false); // Fecha o dropdown se estiver aberto
-  };
+  // Funções para o modal de login/cadastro
+  const openModal = () => setModalIsOpen(true);
+  const closeModal = () => setModalIsOpen(false);
 
-  const handleLoginSubmit = (e) => {
-    e.preventDefault();
-    console.log('Login:', username, password);
-    // Aqui você pode adicionar a lógica de autenticação
-    setUsername('');
-    setPassword('');
-    setShowLogin(false); // Fecha o formulário após o login
-  };
+  const toggleLogin = () => setIsLogin(!isLogin);
 
   return (
     <>
@@ -100,46 +94,7 @@ const Navbar = () => {
         </ul>
         <div className="social-icons">
           <div className="icon-container">
-            <BsPersonArmsUp onClick={handleLoginToggle} className="icon" />
-            {showLogin && (
-              <div className="login-form">
-                <h3>Login</h3>
-                <form onSubmit={handleLoginSubmit}>
-                  <label>
-                    Usuário:
-                    <input
-                      type="text"
-                      value={username}
-                      onChange={(e) => setUsername(e.target.value)}
-                      required
-                    />
-                  </label>
-                  <label>
-                    Senha:
-                    <input
-                      type="password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      required
-                    />
-                  </label>
-                  <button type="submit">Login</button>
-                </form>
-                <div className="signup-link">
-                  <p>Não tem uma conta?</p>
-                  <a href="#signup">Cadastre-se</a>
-                </div>
-              </div>
-            )}
-            {dropdownOpen && !showLogin && (
-              <div className="dropdown-menu">
-                <ul>
-                  <li><a href="#profile" onClick={openEditProfile}>Editar Perfil</a></li>
-                  <li><a href="#settings" onClick={openSettings}>Configurações</a></li>
-                  <li><a href="#logout">Logout</a></li>
-                </ul>
-              </div>
-            )}
+            <BsPersonArmsUp onClick={openModal} className="icon" />
           </div>
           <div className="search-container">
             <input
@@ -201,6 +156,54 @@ const Navbar = () => {
           </div>
         </div>
       )}
+
+      {/* Modal de Login/Cadastro */}
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Login Modal"
+        className="modal"
+        overlayClassName="modal-overlay"
+      >
+        <button onClick={closeModal} className="close-button">X</button>
+        {isLogin ? (
+          <div className="modal-content">
+            <h2>Login</h2>
+            <form>
+              <label>
+                Usuário:
+                <input type="text" name="username" />
+              </label>
+              <label>
+                Senha:
+                <input type="password" name="password" />
+              </label>
+              <button type="submit">Entrar</button>
+            </form>
+            <p>Não tem uma conta? <button onClick={toggleLogin}>Cadastre-se</button></p>
+          </div>
+        ) : (
+          <div className="modal-content">
+            <h2>Cadastro</h2>
+            <form>
+              <label>
+                Usuário:
+                <input type="text" name="username" />
+              </label>
+              <label>
+                Senha:
+                <input type="password" name="password" />
+              </label>
+              <label>
+                Confirmar Senha:
+                <input type="password" name="confirmPassword" />
+              </label>
+              <button type="submit">Cadastrar</button>
+            </form>
+            <p>Já tem uma conta? <button onClick={toggleLogin}>Faça login</button></p>
+          </div>
+        )}
+      </Modal>
     </>
   );
 };
@@ -215,7 +218,7 @@ const whatsappContainerStyle = {
   backgroundColor: "#f9f9f9",
   textAlign: "center",
   borderRadius: "5px",
-  zIndex: 1000,
+  zIndex: 10, // Ajustado para não sobrepor o modal
 };
 
 const linkStyle = {

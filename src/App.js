@@ -9,7 +9,7 @@ function App() {
   const images = [
     'https://omunicipiojoinville.com/wp-content/uploads/2023/03/palacete-doria-joinville.jpg',
     'https://facts.net/wp-content/uploads/2023/07/48-facts-about-joinville-1688694462.jpeg',
-    'https://facts.net/wp-content/uploads/2023/07/48-facts-about-joinville-1688694462.jpeg',
+    'https://cortinadopassado.com.br/wp-content/uploads/2019/01/joinville-casa-de-alvino-fleith-imagem-iphan.jpg?w=816',
   ];
 
   useEffect(() => {
