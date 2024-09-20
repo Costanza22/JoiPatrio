@@ -44,7 +44,7 @@ O upload de imagens para perfis e casarões deve ser limitado a formatos PNG e J
 
 **Diagrama de Casos de Uso 
 
-![DiagramaCasosdeUso]("C:\Users\Frida\Downloads\CosPatrio.drawio.png")
+![DiagramaCasosdeUso]("./src/images/CosPatrio.drawio")
 
 (Descrição)**
 
