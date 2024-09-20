@@ -141,6 +141,18 @@ Banco de Dados (MySQL): Armazena os dados dos casarões, usuários, preferência
 
 Serviços Externos (JWT para Autenticação): Garantia de segurança e autorização.
 
+API: 
+Frontend (React): Envia requisições HTTP (usando axios) para a API do backend.
+GET /casaroes – para listar casarões.
+POST /auth/login – para autenticar usuários.
+PUT /usuario/:id – para atualizar o perfil do usuário.
+Backend (Node.js + Express): O backend recebe essas requisições e responde com os dados ou realiza ações como autenticação, consulta ou modificação no banco de dados.
+
+A API seria composta por diversas rotas REST, como:
+/auth para autenticação e registro de usuários.
+/casaroes para busca, cadastro e gerenciamento de casarões.
+/usuarios para edição de perfil e gerenciamento de usuários.
+
 **Exemplo de Fluxo Completo no Diagrama de Containers:**
 
 **Um Visitante acessa a página inicial no Frontend (React).
