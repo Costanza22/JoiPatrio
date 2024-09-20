@@ -143,4 +143,10 @@ O Backend consulta o Banco de Dados e retorna os resultados para o Frontend, que
 Um Usuário Registrado faz login no sistema, o que aciona o Serviço de Autenticação (JWT) para validar suas credenciais.
 Um Administrador acessa as funcionalidades de gerenciamento de usuários e casarões, enviando requisições via Backend para o Banco de Dados.**
 
+**Referências:**
+1. [Lista de Imóveis Protegidos Culturalmente de Joinville](https://www.joinville.sc.gov.br/wp-content/uploads/2023/11/Lista-de-Imoveis-com-Protecao-Cultural-novembro-2023.pdf)
+2. https://www.patrimoniocultural.pr.gov.br/Curitiba
+
+
+
 
