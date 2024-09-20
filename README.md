@@ -19,11 +19,17 @@ A motivação para criar este projeto surgiu da necessidade de destacar e preser
 **Funcionalidades Principais**
 
 Busca de Casarões: Visitantes e usuários registrados podem pesquisar casarões históricos por nome.
+
 Cadastro de Casarões: Administradores podem adicionar novos casarões com informações detalhadas.
+
 Visualização de Casarões: Exibição de informações como fotos e descrição de cada casarão.
+
 Gerenciamento de Usuários: Administradores podem gerenciar o acesso de usuários ao sistema.
+
 Autenticação: Usuários podem se registrar e fazer login no sistema.
+
 Configurações de Usuário: Usuários registrados podem alterar preferências, como temas (dark/light) e notificações.
+
 Edição de Perfis: Usuários podem editar suas informações de perfil, incluindo upload de fotos.
 
 **Requisitos Funcionais**
@@ -53,11 +59,11 @@ Back-end: Node.js
 
 Banco de Dados: SQL
 
-**Diagrama de Casos de Uso 
+**Diagrama de Casos de Uso** 
 
 ![CosPatrio drawio](https://github.com/user-attachments/assets/4fc5e48b-07d5-457d-80ac-d8af754875de)
 
-(Descrição)**
+**(Descrição)**
 
 **Atores:**
 
