@@ -41,7 +41,64 @@ O sistema deve garantir que apenas administradores possam alterar o conteúdo de
 O sistema deve garantir a segurança dos dados de usuário com autenticação baseada em token (JWT).
 O sistema deve ser escalável para suportar um grande número de usuários simultâneos.
 O upload de imagens para perfis e casarões deve ser limitado a formatos PNG e JPEG.
-Tecnologias Utilizadas
+
+**Diagrama de Casos de Uso (Descrição)**
+
+**Atores:**
+
+Visitante: Usuário não registrado que acessa o sistema.
+
+Usuário Registrado: Usuário que se registrou e fez login no sistema.
+
+Administrador: Usuário com permissões para gerenciar o conteúdo do sistema.
+
+
+**Casos de Uso:**
+
+**Buscar Casarões**
+
+Ator: Visitante, Usuário Registrado
+
+Descrição: Permite que o visitante ou usuário registrado pesquise casarões históricos por nome.
+
+**Cadastrar Casarões**
+
+Ator: Administrador
+
+Descrição: Permite que o administrador adicione novos casarões com informações detalhadas.
+
+**Visualizar Casarões**
+
+Ator: Visitante, Usuário Registrado
+
+Descrição: Permite a exibição de informações como fotos e descrição de cada casarão.
+
+**Gerenciar Usuários**
+
+Ator: Administrador
+
+Descrição: Permite que o administrador gerencie o acesso de usuários ao sistema (ativar, desativar ou excluir contas).
+
+**Autenticação**
+
+Ator: Usuário Registrado
+
+Descrição: Permite que os usuários se registrem e façam login no sistema.
+
+Configurações de Usuário
+
+
+**Ator: Usuário Registrado**
+
+Descrição: Permite que os usuários registrados alterem suas preferências (modo escuro/claro, notificações).
+
+**Edição de Perfis**
+
+Ator: Usuário Registrado
+
+Descrição: Permite que os usuários editem suas informações de perfil, incluindo upload de fotos.
+
+**Tecnologias Utilizadas**
 
 Front-end: React
 
