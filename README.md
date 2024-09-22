@@ -1,6 +1,6 @@
 ## Joi Patrio - Sistema Web de Casarões Históricos
 
-<img width="1233" alt="reactweb" src="https://github.com/user-attachments/assets/b1f26b67-03ba-4a30-a103-2d28775b6fb6">
+<img width="1219" alt="Print2" src="https://github.com/user-attachments/assets/cee65b3c-6717-4b79-a3a1-dd1793587ec4">
 
 ## 1. Visão Geral do Projeto
 O Joi Patrio é um sistema web desenvolvido em React para cadastrar, gerenciar e visualizar casarões históricos em Joinville. Ele oferece uma plataforma onde visitantes podem explorar informações e administradores podem gerenciar o conteúdo. Usuários registrados possuem funcionalidades extras, como preferências personalizadas e acesso a detalhes históricos dos casarões.
