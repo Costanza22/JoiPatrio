@@ -210,7 +210,7 @@ body {
 }
 
 .title-container {
-  background-color:burlywood; /* Cor de fundo do container */
+  background-color:blanchedalmond; /* Cor de fundo do container */
   padding: 10px 20px; /* Espaçamento interno */
   border-radius: 5px; /* Bordas arredondadas */
   text-align: center; /* Centraliza o texto */
@@ -289,15 +289,27 @@ p {
 .description-container {
   margin-top: 20px; /* Espaçamento superior do próximo container */
   padding: 20px; /* Espaçamento interno */
-  background-color: burlywood; /* Fundo claro */
+  background-color: white; /* Fundo claro */
   border-radius: 10px; /* Bordas arredondadas */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
+.blog-container {
+  background-color: burlywood;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+
 .blog-title {
-  font-size: 36px; /* Tamanho do título */
-  color: black; /* Cor do título */
-  margin-left: 10px; /* Espaçamento entre o ícone e o título */
+  margin-left: 10px;
+  font-size: 2em;
+  color: #333;
+  text-decoration: underline;
 }
 
 .blog-posts {
@@ -318,3 +330,21 @@ p {
   font-size: 16px;
   line-height: 1.6;
 }
+.button-container {
+  display: flex;
+  justify-content: center; /* Centraliza o botão horizontalmente */
+  align-items: center; /* Centraliza o botão verticalmente */
+  background-color: burlywood; /* Cor do fundo */
+}
+
+.styled-button {
+  padding: 15px 30px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
+  color:#000; /* Cor do texto */
+  background-color:peru; /* Cor do botão (saddle brown) */
+  border: none; /* Remove a borda padrão */
+  border-radius: 8px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+  transition: background-color 0.3s; /* Transição suave */
+}
+

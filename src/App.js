@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import './App.css';
+
+
 import { FaRegNewspaper } from "react-icons/fa";
 import { SiMicrodotblog } from "react-icons/si";
 import { BsFillHousesFill } from "react-icons/bs";
@@ -64,11 +66,16 @@ function App() {
         </div>
       </div>
       <div className="container">
-        <header className="App-header">
-          <h1>Patrimônio Histórico de Joinville</h1>
-          <p>Bem-vindo ao meu site!</p>
-        </header>
-      </div>
+  <header className="App-header">
+    <h1>Patrimônio Histórico de Joinville</h1>
+    <div className="button-container">
+      <a href="index.html" target="_blank" rel="noopener noreferrer">
+        <button className="styled-button"><strong>Acesso ao Site!</strong></button>
+      </a>
+    </div>
+  </header>
+</div>
+
 
       <main>
         <section className="posts">
@@ -149,27 +156,26 @@ function App() {
     </a>
   </div>
 </section>
-{/* Nova seção de blog */}
 <section className="blog-container">
-          <div className="title-container">
-            <SiMicrodotblog size={30} />
-            <h1 className="blog-title">Blog sobre Patrimônio Histórico</h1>
-          </div>
-          <div className="blog-posts">
-            <article className="blog-post">
-              <h2>A importância de preservar os casarões antigos</h2>
-              <p>Os casarões históricos são marcos da história de Joinville e representam a cultura e a memória da cidade. Preservá-los é essencial para manter viva essa herança.</p>
-            </article>
-            <article className="blog-post">
-              <h2>Casarões mais emblemáticos de Joinville</h2>
-              <p>Alguns dos casarões mais conhecidos incluem o Palacete Niemeyer, a Casa da Memória, e o Museu Nacional de Imigração e Colonização.</p>
-            </article>
-            <article className="blog-post">
-              <h2>Desafios na preservação do patrimônio histórico</h2>
-              <p>A falta de investimentos e a ação do tempo são os principais desafios enfrentados na preservação desses imóveis, além do risco de incêndios.</p>
-            </article>
-          </div>
-        </section>
+  <div className="title-container">
+    <SiMicrodotblog size={60} />
+    <h1 className="blog-title">Blog sobre Patrimônio Histórico</h1>
+  </div>
+  <div className="blog-posts">
+    <article className="blog-post">
+      <h2>A importância de preservar os casarões antigos</h2>
+      <p>Os casarões históricos são marcos da história de Joinville e representam a cultura e a memória da cidade. Preservá-los é essencial para manter viva essa herança.</p>
+    </article>
+    <article className="blog-post">
+      <h2>Casarões mais emblemáticos de Joinville</h2>
+      <p>Alguns dos casarões mais conhecidos incluem o Palacete Niemeyer, a Casa da Memória, e o Museu Nacional de Imigração e Colonização.</p>
+    </article>
+    <article className="blog-post">
+      <h2>Desafios na preservação do patrimônio histórico</h2>
+      <p>A falta de investimentos e a ação do tempo são os principais desafios enfrentados na preservação desses imóveis, além do risco de incêndios.</p>
+    </article>
+  </div>
+</section>
       </main>
     </div>
   );

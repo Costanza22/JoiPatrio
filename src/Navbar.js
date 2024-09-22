@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { BsPersonArmsUp } from 'react-icons/bs';
 import { FaSearch, FaQuestionCircle, FaWhatsapp } from 'react-icons/fa';
-import { FcAbout } from 'react-icons/fc'; // Importando o ícone
+import { FcAbout } from 'react-icons/fc';
 import Settings from './Settings';
 import EditProfile from './EditProfile';
 import './Navbar.css';
 
-Modal.setAppElement('#root'); // Para acessibilidade
+Modal.setAppElement('#root');
 
 const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -17,10 +17,8 @@ const Navbar = () => {
   const [showEditProfile, setShowEditProfile] = useState(false);
   const [showQuestionModal, setShowQuestionModal] = useState(false);
   const [question, setQuestion] = useState('');
-  const [showWhatsAppContainer, setShowWhatsAppContainer] = useState(false); // Estado para WhatsApp
+  const [showWhatsAppContainer, setShowWhatsAppContainer] = useState(false);
   const [showAbout, setShowAbout] = useState(false);
-
-  // Estados para o modal de login/cadastro
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
 
@@ -32,26 +30,9 @@ const Navbar = () => {
     setSearchQuery(e.target.value);
   };
 
-  const handleFilterChange = (e) => {
-    setFilter(e.target.value);
-  };
-
   const handleSearch = () => {
     console.log(`Searching for: ${searchQuery} with filter: ${filter}`);
-  };
-
-  const openSettings = () => {
-    setShowSettings(true);
-    setShowEditProfile(false);
-  };
-
-  const openEditProfile = () => {
-    setShowSettings(false);
-    setShowEditProfile(true);
-  };
-
-  const handleWhatsAppClick = () => {
-    setShowWhatsAppContainer(!showWhatsAppContainer); // Alterna a visibilidade do container do WhatsApp
+    // Adicione a lógica de pesquisa aqui
   };
 
   const handleQuestionModalOpen = () => setShowQuestionModal(true);
@@ -64,11 +45,6 @@ const Navbar = () => {
     handleQuestionModalClose();
   };
 
-  const toggleAbout = () => {
-    setShowAbout(!showAbout);
-  };
-
-  // Funções para o modal de login/cadastro
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
 
@@ -76,40 +52,44 @@ const Navbar = () => {
 
   return (
     <>
+      {/* Imagem e Título */}
+      <div className="navbar-header">
+  <img 
+    src="https://revistanews.com.br/wp-content/uploads/2018/09/moinho.jpg" // Altere para o caminho correto da sua imagem
+    alt="Bens Tombados"
+    className="navbar-logo"
+  />
+  <h1>Bens Tombados Joinville</h1>
+  <h2>Patrimônio Cultural da cidade</h2>
+</div>
+
+
       <nav className="navbar">
         <ul>
           <li><a href="#home">Home</a></li>
-          <li><a href="#about" onClick={toggleAbout}>Sobre</a></li>
-          <li><a href="#gallery">Galeria</a></li>
+          <li><a href="#about" onClick={() => setShowAbout(!showAbout)}>Sobre</a></li>
           <li>
-            <a href="#contato" onClick={handleWhatsAppClick}>
-              Contato <FaWhatsapp />
+            <a href="#contato" onClick={() => setShowWhatsAppContainer(!showWhatsAppContainer)}>
+              <FaWhatsapp size={20} />
             </a>
           </li>
           <li>
             <a href="#questions" onClick={handleQuestionModalOpen}>
-              <FaQuestionCircle /> Perguntas e Sugestões
+              <FaQuestionCircle size={20} />
             </a>
           </li>
         </ul>
+        <div className="search-container">
+          <input
+            type="text"
+            placeholder="O que você procura?"
+            value={searchQuery}
+            onChange={handleSearchChange}
+          />
+          <FaSearch onClick={handleSearch} className="icon" />
+        </div>
         <div className="social-icons">
-          <div className="icon-container">
-            <BsPersonArmsUp onClick={openModal} className="icon" />
-          </div>
-          <div className="search-container">
-            <input
-              type="text"
-              placeholder="Pesquisar casarão..."
-              value={searchQuery}
-              onChange={handleSearchChange}
-            />
-            <select value={filter} onChange={handleFilterChange}>
-              <option value="">Todos</option>
-              <option value="historico">Histórico</option>
-              <option value="moderno">Moderno</option>
-            </select>
-            <FaSearch onClick={handleSearch} className="icon" />
-          </div>
+          <BsPersonArmsUp onClick={openModal} className="icon" />
         </div>
         {showSettings && <Settings />}
         {showEditProfile && <EditProfile />}
@@ -124,13 +104,12 @@ const Navbar = () => {
       )}
 
       {showWhatsAppContainer && (
-        <div className="whatsapp-container" style={whatsappContainerStyle}>
+        <div className="whatsapp-container">
           <p>Contate-me no WhatsApp:</p>
           <a
             href="https://wa.me/5547988041237"
             target="_blank"
             rel="noopener noreferrer"
-            style={linkStyle}
           >
             Clique aqui para falar comigo <FaWhatsapp />
           </a>
@@ -218,7 +197,7 @@ const whatsappContainerStyle = {
   backgroundColor: "#f9f9f9",
   textAlign: "center",
   borderRadius: "5px",
-  zIndex: 10, // Ajustado para não sobrepor o modal
+  zIndex: 1000,
 };
 
 const linkStyle = {
