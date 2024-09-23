@@ -9,11 +9,13 @@ O Joi Patrio é um sistema web desenvolvido em React para cadastrar, gerenciar e
 Joinville é rica em história, e seus casarões são símbolos desse passado cultural. A preservação desses imóveis é essencial para manter viva a identidade histórica da cidade e proporcionar educação à comunidade local e visitantes.
 
 ## 3. Motivação do Projeto
-A necessidade de conscientizar sobre a preservação do patrimônio histórico motivou a criação deste sistema. Ele facilita o acesso à história dos casarões, conectando os usuários com o passado cultural de Joinville e promovendo o engajamento da comunidade.
+A falta de informações sobre a história da cidade como também dos casarões prejudica tanto estudantes de Arquitetura e Urbanismo que querem estudar e adquirir conhecimento como também para amantes do Patrimônio Histórico além disso
+a necessidade de conscientizar sobre a preservação do patrimônio histórico motivou a criação deste sistema. Ele facilita o acesso à história dos casarões, conectando os usuários com o passado cultural de Joinville e promovendo o engajamento da comunidade.
+
 
 ## 4. Funcionalidades Principais
 
-Busca de Casarões: Pesquisa de casarões por nome.
+Busca de Casarões: Lista acoplada
 
 Cadastro de Casarões: Administradores podem adicionar novos casarões.
 
