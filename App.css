@@ -371,3 +371,53 @@ p {
   text-decoration: none;
   color: #333;
 }
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+.navbar {
+  position: relative; /* Adiciona posição relativa */
+  z-index: 10; /* Certifique-se de que o menu tenha um z-index maior que o modal */
+}
+
+.modal {
+  position: fixed; /* Torna o modal fixo na tela */
+  top: 50%; /* Centraliza o modal verticalmente */
+  left: 50%; /* Centraliza o modal horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta para que fique centralizado */
+  z-index: 5; /* Z-index menor que o menu */
+  background: white; /* Fundo do modal */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+}
+
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.5); /* Fundo escuro atrás do modal */
+  position: fixed; /* Fixo para cobrir toda a tela */
+  top: 0; 
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4; /* Z-index menor que o menu */
+}
+.casarao-info {
+  margin: 20px;
+  padding: 20px;
+  border: 2px solid #ccc; /* Borda */
+  border-radius: 8px; /* Bordas arredondadas */
+  background-color:blanchedalmond;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+}
+
+.casarao-image {
+  width: 50%; /* Ajusta a largura da imagem */
+  height: auto; /* Mantém a proporção da imagem */
+  border: 2px solid burlywood;/* Borda azul */
+  border-radius: 8px; /* Bordas arredondadas para a imagem */
+  margin-bottom: 15px; /* Espaçamento abaixo da imagem */
+  cursor: pointer; /* Indica que a imagem é clicável */
+}
+
+.video-container {
+  margin: 15px 0; /* Espaçamento ao redor do vídeo */
+}
