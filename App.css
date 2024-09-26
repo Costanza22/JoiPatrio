@@ -1,7 +1,7 @@
 body {
-  font-family: 'Courier New', Courier, monospace; /* Fonte retrô */
-  background-color:blanchedalmond;/* Fundo mais suave */
-  color: #333; /* Texto escuro para melhor legibilidade */
+  font-family: 'Courier New', Courier, monospace; 
+  background-color:blanchedalmond;
+  color: #333; 
 }
 
 .carousel-container {
@@ -9,8 +9,8 @@ body {
   height: 300px;
   overflow: hidden;
   position: relative;
-  border: 10px solid burlywood; /* Borda marrom para um toque vintage */
-  border-radius: 15px; /* Bordas arredondadas */
+  border: 10px solid burlywood; 
+  border-radius: 15px; 
 }
 .carousel {
   position: relative;
@@ -32,16 +32,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: sepia(0.3); /* Efeito sépia nas imagens */
+  filter: sepia(0.3); 
 }
-
-
-
 .carousel-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ajusta a imagem para cobrir o container */
-  border-radius: 15px; /* Bordas arredondadas para as imagens */
+  object-fit: cover; 
+  border-radius: 15px; 
 }
 
 
@@ -54,15 +51,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, 0.5); /* Overlay com opacidade */
+  background: rgba(0, 0, 0, 0.5); 
 }
 
 .App-header {
   text-align: center;
   padding: 2rem;
-  background-color:burlywood; /* Fundo dourado */
-  border-radius: 10px; /* Bordas arredondadas */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  background-color:burlywood; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
 
@@ -146,16 +143,16 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
   padding: 1rem;
   z-index: 1000;
-  border-radius: 15px; /* Bordas mais arredondadas */
-  border: 5px solid #FFD700; /* Borda dourada */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para profundidade */
-  width: 80%; /* Ajusta a largura do modal */
-  max-width: 600px; /* Limita a largura máxima */
+  border-radius: 15px; 
+  border: 5px solid #FFD700; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+  width: 80%; 
+  max-width: 600px; 
 }
 
 .video-popup video {
-  width: 100%; /* Faz o vídeo ocupar toda a largura do modal */
-  border-radius: 10px; /* Bordas arredondadas para o vídeo */
+  width: 100%; 
+  border-radius: 10px; 
 }
 
 
@@ -172,7 +169,7 @@ body {
 
 .container {
   width: 80%;
-  margin: 50px auto; /* Espaço vertical (50px) entre o container e outros elementos */
+  margin: 50px auto; 
   padding: 20px;
   background-color: #f4f4f4;
   border-radius: 8px;
@@ -182,8 +179,8 @@ body {
 .App-header {
   text-align: center;
   color: #333;
-  margin-top: 20px; /* Espaço dentro do header */
-  margin-bottom: 20px; /* Espaço abaixo do header */
+  margin-top: 20px; 
+  margin-bottom: 20px; 
 }
 
 .App-header h1 {
@@ -197,61 +194,61 @@ body {
 }
 
 .spaced-img {
-  margin-bottom: 100px; /* Adiciona espaço abaixo da primeira imagem */
+  margin-bottom: 100px; 
 }
 
 .spaced-img + .spaced-img {
-  margin-top: 20px; /* Adiciona espaço acima da segunda imagem */
+  margin-top: 20px; 
 }
 
 .posts {
-  position: relative; /* Para posicionar elementos se necessário */
-  padding: 20px; /* Espaçamento interno */
+  position: relative; 
+  padding: 20px; 
 }
 
 .title-container {
-  background-color:blanchedalmond; /* Cor de fundo do container */
-  padding: 10px 20px; /* Espaçamento interno */
-  border-radius: 5px; /* Bordas arredondadas */
-  text-align: center; /* Centraliza o texto */
-  margin: 0 auto; /* Centraliza o container horizontalmente */
-  max-width: 300px; /* Define uma largura máxima para o container */
-  width: 100%; /* Faz o container ocupar 100% da largura até o máximo */
-  display: flex; /* Ativa o flexbox */
-  align-items: center; /* Centraliza verticalmente */
-  justify-content: center; /* Centraliza horizontalmente */
-  top: -40px; /* Ajuste para colocar mais para cima */
+  background-color:blanchedalmond; 
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  text-align: center; 
+  margin: 0 auto; 
+  max-width: 300px; 
+  width: 100%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  top: -40px; 
 }
 
 .posts-title {
-  font-size: 24px; /* Tamanho da fonte */
-  margin: 0; /* Remove margens padrão */
+  font-size: 24px; 
+  margin: 0; 
 }
 .description-container {
-  padding: 20px; /* Espaçamento interno */
-  background-color: burlywood; /* Fundo claro */
-  border-radius: 10px; /* Bordas arredondadas */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  padding: 20px; 
+  background-color: burlywood; 
+  border-radius: 10px; 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
 }
 
 h2 {
-  color: #333; /* Cor do subtítulo */
+  color: #333; 
 }
 
 h1 {
-  color: black; /* Cor do título */
-  margin-bottom: 15px; /* Espaçamento abaixo do título */
+  color: black; 
+  margin-bottom: 15px; 
 }
 
 p {
-  line-height: 1.6; /* Melhor legibilidade */
-  margin-bottom: 20px; /* Espaçamento abaixo do parágrafo */
+  line-height: 1.6; 
+  margin-bottom: 20px; 
 }
 
 .description-images {
-  display: flex; /* Usar flexbox para alinhar as imagens */
-  justify-content: center; /* Centraliza as imagens */
-  gap: 10px; /* Espaçamento entre as imagens (ajuste o valor conforme necessário) */
+  display: flex; 
+  justify-content: center; 
+  gap: 10px; 
 }
 
 .video-cover {
@@ -261,7 +258,7 @@ p {
 
 .video-cover img {
   width: 100%;
-  border-radius: 10px; /* Bordas arredondadas */
+  border-radius: 10px; 
 }
 
 .play-button {
@@ -269,29 +266,29 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 3rem; /* Tamanho do ícone de play */
+  font-size: 3rem;
   color: white;
 }
 .navbar-header {
   text-align: center;
-  margin-bottom: 10px; /* Menos espaço entre a imagem/título e a navbar */
-  width: 100%; /* Para ocupar toda a largura disponível da navbar */
-  padding: 5px; /* Menos espaço interno */
-  border-radius: 8px; /* Opcional: bordas arredondadas */
+  margin-bottom: 10px; 
+  width: 100%; 
+  padding: 5px; 
+  border-radius: 8px; 
 }
 
 .navbar-logo {
-  max-width: 100px; /* Define uma largura máxima menor para a logo */
-  height: auto; /* Mantém a proporção da imagem */
-  vertical-align: middle; /* Alinha verticalmente a logo com o texto */
+  max-width: 100px; 
+  height: auto; 
+  vertical-align: middle; 
 }
 
 .description-container {
-  margin-top: 20px; /* Espaçamento superior do próximo container */
-  padding: 20px; /* Espaçamento interno */
-  background-color: white; /* Fundo claro */
-  border-radius: 10px; /* Bordas arredondadas */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  margin-top: 20px; 
+  padding: 20px; 
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .blog-container {
@@ -317,13 +314,13 @@ p {
 }
 
 .blog-post {
-  margin-bottom: 20px; /* Espaçamento entre os artigos */
+  margin-bottom: 20px;
 }
 
 .blog-post h2 {
-  font-size: 24px; /* Tamanho do subtítulo */
-  color: #333; /* Cor do subtítulo */
-  margin-bottom: 10px; /* Espaçamento abaixo do subtítulo */
+  font-size: 24px; 
+  color: #333; 
+  margin-bottom: 10px; 
 }
 
 .blog-post p {
@@ -332,42 +329,42 @@ p {
 }
 .button-container {
   display: flex;
-  justify-content: center; /* Centraliza o botão horizontalmente */
-  align-items: center; /* Centraliza o botão verticalmente */
-  background-color: burlywood; /* Cor do fundo */
+  justify-content: center; 
+  align-items: center; 
+  background-color: burlywood; 
 }
 
 .styled-button {
-  padding: 15px 30px; /* Espaçamento interno */
-  font-size: 16px; /* Tamanho da fonte */
-  color:#000; /* Cor do texto */
-  background-color:peru; /* Cor do botão (saddle brown) */
-  border: none; /* Remove a borda padrão */
-  border-radius: 8px; /* Bordas arredondadas */
-  cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
-  transition: background-color 0.3s; /* Transição suave */
+  padding: 15px 30px; 
+  font-size: 16px; 
+  color:#000; 
+  background-color:peru; 
+  border: none; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
 }
 .dropdown {
   display: flex;
   flex-direction: column;
   list-style: none;
   padding: 0;
-  position: relative; /* Ensure proper positioning */
+  position: relative; 
 }
 
 .dropdown-menu {
   display: block;
-  position: absolute; /* Maintain absolute positioning for flexibility */
-  top: 100%; /* Position below the parent element */
-  left: 0; /* Align to the left */
-  background-color: #f0f0f0; /* Example background color */
-  border: 1px solid #ccc; /* Optional border */
-  padding: 10px; /* Optional padding */
-  z-index: 1; /* Ensure it appears above other elements */
+  position: absolute; 
+  top: 100%; 
+  left: 0; 
+  background-color: #f0f0f0; 
+  border: 1px solid #ccc; 
+  padding: 10px; 
+  z-index: 1; 
 }
 
 .dropdown a {
-  padding: 5px 10px; /* Adjust padding as needed */
+  padding: 5px 10px; 
   text-decoration: none;
   color: #333;
 }
@@ -376,48 +373,108 @@ p {
   font-weight: bold;
 }
 .navbar {
-  position: relative; /* Adiciona posição relativa */
-  z-index: 10; /* Certifique-se de que o menu tenha um z-index maior que o modal */
+  position: relative; 
+  z-index: 10; 
 }
 
 .modal {
-  position: fixed; /* Torna o modal fixo na tela */
-  top: 50%; /* Centraliza o modal verticalmente */
-  left: 50%; /* Centraliza o modal horizontalmente */
-  transform: translate(-50%, -50%); /* Ajusta para que fique centralizado */
-  z-index: 5; /* Z-index menor que o menu */
-  background: white; /* Fundo do modal */
-  padding: 20px; /* Espaçamento interno */
-  border-radius: 8px; /* Bordas arredondadas */
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  z-index: 5; 
+  background: white; 
+  padding: 20px; 
+  border-radius: 8px; 
 }
 
 .modal-overlay {
-  background: rgba(0, 0, 0, 0.5); /* Fundo escuro atrás do modal */
-  position: fixed; /* Fixo para cobrir toda a tela */
+  background: rgba(0, 0, 0, 0.5); 
+  position: fixed; 
   top: 0; 
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 4; /* Z-index menor que o menu */
+  z-index: 4; 
 }
 .casarao-info {
   margin: 20px;
   padding: 20px;
-  border: 2px solid #ccc; /* Borda */
-  border-radius: 8px; /* Bordas arredondadas */
+  border: 2px solid #ccc; 
+  border-radius: 8px; 
   background-color:blanchedalmond;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para profundidade */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .casarao-image {
-  width: 50%; /* Ajusta a largura da imagem */
-  height: auto; /* Mantém a proporção da imagem */
-  border: 2px solid burlywood;/* Borda azul */
-  border-radius: 8px; /* Bordas arredondadas para a imagem */
-  margin-bottom: 15px; /* Espaçamento abaixo da imagem */
-  cursor: pointer; /* Indica que a imagem é clicável */
+  width: 50%; 
+  height: auto; 
+  border: 2px solid burlywood;
+  border-radius: 8px; 
+  margin-bottom: 15px; 
+  cursor: pointer; 
 }
 
 .video-container {
-  margin: 15px 0; /* Espaçamento ao redor do vídeo */
+  margin: 15px 0; 
+}
+.image-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.casarao-image {
+  width: 45%;              
+  height: 300px;            
+  object-fit: cover;        
+}
+.fechar-button {
+  background-color: burlywood;  
+  color: white;                 
+  border: none;               
+  padding: 10px 20px;       
+  font-size: 16px;           
+  border-radius: 5px;           
+  cursor: pointer;              
+  transition: background-color 0.3s ease; 
+}
+
+.fechar-button:hover {
+  background-color: #deb887;  
+}
+.casarao-title {
+  font-size: 2rem;           
+  color: #8b4513;           
+  margin-bottom: 20px;        
+}
+
+.casarao-subtitle {
+  font-size: 1.5rem;          
+  color: #a0522d;             
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.casarao-history p {
+  font-size: 1.1rem;          
+  line-height: 1.6;           
+  color: #333;                 
+}
+
+.casarao-history strong {
+  color: #b22222;            
+}
+
+.casarao-history em {
+  font-style: italic;          
+  color: #6a5acd;
+}
+.my-icon {
+  color: #3b2b2b; 
+  font-size: 32px; 
+  margin-right: 8px; 
+}
+
+.my-icon:hover {
+  transform: scale(1.2); 
 }
