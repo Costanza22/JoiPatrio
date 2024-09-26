@@ -7,6 +7,7 @@ import Settings from './Settings';
 import EditProfile from './EditProfile';
 import './css/Navbar.css';
 import { Link } from 'react-router-dom';
+import { FaHouseFlag } from "react-icons/fa6";
 
 Modal.setAppElement('#root');
 
@@ -23,13 +24,11 @@ const Navbar = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
   const [selectedCasarao, setSelectedCasarao] = useState(null);
-  const [videoVisible, setVideoVisible] = useState(false); // Estado para controlar a visibilidade do vídeo
+  const [videoVisible, setVideoVisible] = useState(false); 
 
   const casarões = [
     'Palacete Niemeyer',
-    'Casa da Memória',
-    'Museu Nacional de Imigração e Colonização',
-    // Adicione mais casarões conforme necessário
+    
   ];
 
   const toggleDropdown = () => {
@@ -73,14 +72,14 @@ const Navbar = () => {
 
   const handleCasaraoClick = (casarao) => {
     setSelectedCasarao(selectedCasarao === casarao ? null : casarao);
-    setVideoVisible(false); // Oculta o vídeo ao selecionar um casarão
+    setVideoVisible(false); 
   };
 
   const handleImageClick = () => {
-    setVideoVisible(true); // Mostra o vídeo ao clicar na imagem
+    setVideoVisible(true); 
   };
 
-  const closeVideo = () => setVideoVisible(false); // Função para fechar o vídeo
+  const closeVideo = () => setVideoVisible(false); 
 
   return (
     <>
@@ -127,12 +126,13 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="search-container">
-          <input
-            type="text"
-            placeholder="O que você procura?"
-            value={searchQuery}
-            onChange={handleSearchChange}
-          />
+      <input
+        type="text"
+        placeholder="O que você procura?"
+        value={searchQuery}
+        onChange={handleSearchChange}
+      />
+      
           <FaSearch onClick={handleSearch} className="icon" />
         </div>
         <div className="social-icons">
@@ -167,24 +167,33 @@ const Navbar = () => {
         </div>
       )}
 
-      {selectedCasarao && (
-        <div className="casarao-info">
-          <h1> {selectedCasarao}</h1>
-          <img 
-            src="https://static.ndmais.com.br/2011/01/28-01-2011-22-10-29-palacete-foto2-tentar-usar-esta.jpg" 
-            
-            alt={selectedCasarao} 
-            className="casarao-image" 
-            onClick={handleImageClick} // Ao clicar na imagem, mostra o vídeo
-          />
-          {videoVisible && ( // Se o vídeo estiver visível, mostra o vídeo embed
+{selectedCasarao && (
+  <div className="casarao-info">
+    <h1>{selectedCasarao}</h1>
+    
+    {/* Primeira Imagem */}
+    <img 
+      src="https://static.ndmais.com.br/2011/01/28-01-2011-22-10-29-palacete-foto2-tentar-usar-esta.jpg" 
+      alt={selectedCasarao} 
+      className="casarao-image" 
+      onClick={handleImageClick} // Ao clicar na imagem, mostra o vídeo
+    />
+
+    {/* Segunda Imagem */}
+    <img 
+      src="https://farm5.staticflickr.com/4720/25928574128_9a4756f437_b.jpg" // Substitua pelo link da nova imagem
+      alt={`${selectedCasarao} - Outra visão`} 
+      className="casarao-image" 
+      onClick={handleImageClick} 
+    />
+          {videoVisible && ( 
             <div className="video-container">
               <button className="close-video" onClick={closeVideo}>X</button> {/* Botão para fechar o vídeo */}
               <img 
                 src="https://hinsching.files.wordpress.com/2023/02/image-44.png?w=720" 
                 alt="Capa do Vídeo" 
                 className="video-cover" 
-                onClick={handleImageClick} // Clica na imagem para mostrar o vídeo
+                onClick={handleImageClick} 
               />
               <iframe 
                 width="560" 
@@ -198,18 +207,28 @@ const Navbar = () => {
               ></iframe>
             </div>
           )}
-          <p>
-            Construído em 1906 pelo comerciante Luiz Niemeyer, o casarão durante décadas foi a residência da família. 
-            Filho de Johann Otto Louis Niemeyer, ex-diretor da Colônia Dona Francisca, e nascido em 1869 já em Joinville, 
-            Luiz Niemeyer tinha o mesmo nome do pai. Casou-se com Sophie Dorothea Lepper, filha do comerciante, industrial 
-            e deputado estadual Hermann August Lepper, uma das personalidades mais atuantes da cidade no final do século 19 
-            e início do século 20. Durante anos, trabalhou com o sogro na empresa de importação e exportação e casa de secos e molhados. 
-            No início dos anos 80, o Palacete Niemeyer quase foi ao chão para ceder lugar à nova sede do Banco do Brasil. 
-            Em meio a muita polêmica na cidade, a demolição chegou a ser iniciada em agosto de 1982. Mas logo foi interrompida e, 
-            em outubro do mesmo ano, o banco anunciou a decisão de preservar o casarão. Dois anos depois, o novo prédio do BB 
-            foi erguido ao lado do local.
-          </p>
-          <button onClick={() => setSelectedCasarao(null)}>Fechar</button>
+          <div className="casarao-history">
+  <h2 className="casarao-title">
+  <FaHouseFlag className="my-icon" />A História do Palacete Niemeyer</h2>
+  <p>
+    <strong>Construído em 1906</strong> pelo renomado comerciante <em>Luiz Niemeyer</em>, o Palacete foi, por décadas, lar da sua família. Filho de Johann Otto Louis Niemeyer, ex-diretor da Colônia Dona Francisca, Luiz Niemeyer, nascido em Joinville em 1869, herdou o nome do pai.
+  </p>
+  <p>
+    Ele se casou com <em>Sophie Dorothea Lepper</em>, filha de Hermann August Lepper, um influente comerciante, industrial e deputado estadual. Hermann Lepper foi uma das personalidades mais marcantes de Joinville no final do século 19 e início do século 20. Juntos, Luiz e Hermann trabalharam na empresa familiar de importação, exportação e secos e molhados.
+  </p>
+  <h3 className="casarao-subtitle">A Ameaça de Demolição</h3>
+  <p>
+    Nos anos 80, o Palacete Niemeyer esteve ameaçado de demolição para dar lugar à nova sede do <strong>Banco do Brasil</strong>. Em agosto de 1982, a demolição foi iniciada, gerando muita polêmica na cidade. No entanto, em outubro do mesmo ano, o Banco do Brasil anunciou a decisão de preservar o casarão.
+  </p>
+  <p>
+    Dois anos mais tarde, em 1984, a nova sede do banco foi erguida ao lado do Palacete, que permaneceu como um ícone da história e da arquitetura de Joinville.
+  </p>
+</div>
+
+          <button className="fechar-button" onClick={() => setSelectedCasarao(null)}>
+  Fechar
+</button>
+
         </div>
       )}
 
@@ -338,8 +357,6 @@ const Navbar = () => {
     </>
   );
 };
-
-// Estilos do container de WhatsApp, agora posicionado no canto inferior direito
 const whatsappContainerStyle = {
   position: "fixed",
   bottom: "20px",
