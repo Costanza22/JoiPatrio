@@ -5,13 +5,15 @@ import { FaRegNewspaper } from "react-icons/fa";
 import { SiMicrodotblog } from "react-icons/si";
 import { BsFillHousesFill } from "react-icons/bs";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { IoChatboxOutline } from "react-icons/io5";
+
 
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [videoUrl, setVideoUrl] = useState('');
   const [videoPlaying, setVideoPlaying] = useState(false); 
-
+  const [isChatbotOpen, setIsChatbotOpen] = useState(false);
   const images = [
     'https://omunicipiojoinville.com/wp-content/uploads/2023/03/palacete-doria-joinville.jpg',
     'https://facts.net/wp-content/uploads/2023/07/48-facts-about-joinville-1688694462.jpeg',
@@ -40,6 +42,9 @@ function App() {
 
   const handlePlayVideo = () => {
     setVideoPlaying(true);
+  };
+  const toggleChatbot = () => {
+    setIsChatbotOpen(!isChatbotOpen); 
   };
 
   return (
@@ -78,7 +83,6 @@ function App() {
     </div>
   </header>
 </div>
-
 
       <main>
         <section className="posts">
@@ -184,8 +188,10 @@ function App() {
         <p>Todos os direitos reservados &copy; 2024 - Desenvolvido por Costanza Pasquotto Assef</p>
       </footer>
       </main>
+   <div className="chat-icon">
+        <IoChatboxOutline size={30} />
+      </div>
     </div>
   );
 }
-
 export default App;
