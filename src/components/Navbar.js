@@ -8,6 +8,7 @@ import EditProfile from './EditProfile';
 import './css/Navbar.css';
 import { Link } from 'react-router-dom';
 import { FaHouseFlag } from "react-icons/fa6";
+import { IoMdNotifications } from 'react-icons/io';
 
 Modal.setAppElement('#root');
 
@@ -23,14 +24,23 @@ const Navbar = () => {
   const [showAbout, setShowAbout] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
+  const [loginSuccess, setLoginSuccess] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); 
   const [selectedCasarao, setSelectedCasarao] = useState(null);
   const [videoVisible, setVideoVisible] = useState(false); 
+  const [newComments, setNewComments] = useState(0);
+ 
 
   const casarões = [
     'Palacete Niemeyer',
     
   ];
-
+  const handleLogin = () => {
+    setIsLoggedIn(true); 
+  };
+  const handleLogout = () => {
+    setIsLoggedIn(false); 
+  };
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
@@ -58,6 +68,16 @@ const Navbar = () => {
   const handleQuestionModalOpen = () => setShowQuestionModal(true);
   const handleQuestionModalClose = () => setShowQuestionModal(false);
 
+  const handleNotificationClick = () => {
+    alert('Você tem novas notificações de comentários!');
+    setNewComments(0); // Reseta o contador de novos comentários
+  };
+
+  // Função simulada para adicionar um novo comentário
+  const addComment = () => {
+    setNewComments(prevCount => prevCount + 1); // Incrementa o contador
+  };
+
   const handleSubmitQuestion = (e) => {
     e.preventDefault();
     console.log('Pergunta/Sugestão:', question);
@@ -69,6 +89,16 @@ const Navbar = () => {
   const closeModal = () => setModalIsOpen(false);
 
   const toggleLogin = () => setIsLogin(!isLogin);
+
+  const handleLoginSubmit = (event) => {
+    event.preventDefault();
+    // Lógica para autenticação do usuário
+    // Se a autenticação for bem-sucedida
+    setLoginSuccess(true);
+    setIsLoggedIn(true); // Marca o usuário como logado
+    closeModal(); // Fecha o modal após o login
+  };
+
 
   const handleCasaraoClick = (casarao) => {
     setSelectedCasarao(selectedCasarao === casarao ? null : casarao);
@@ -82,6 +112,7 @@ const Navbar = () => {
   const closeVideo = () => setVideoVisible(false); 
 
   return (
+    
     <>
       <div className="navbar-header">
         <img 
@@ -122,6 +153,12 @@ const Navbar = () => {
           <li>
             <a href="#questions" onClick={handleQuestionModalOpen}>
               <FaQuestionCircle size={20} />
+            </a>
+          </li>
+          <li>
+            <a href="#notifications" onClick={handleNotificationClick}>
+              <IoMdNotifications size={20} />
+              {newComments > 0 && <span className="notification-badge">{newComments}</span>} {/* Exibe o badge de novas notificações */}
             </a>
           </li>
         </ul>
@@ -241,42 +278,49 @@ const Navbar = () => {
         overlayClassName="modal-overlay"
       >
         <button onClick={closeModal} className="close-button">X</button>
-        {isLogin ? (
-          <div className="modal-content">
-            <h2>Login</h2>
-            <form>
-              <label>
-                Usuário:
-                <input type="text" name="username" />
-              </label>
-              <label>
-                Senha:
-                <input type="password" name="password" />
-              </label>
-              <button type="submit">Entrar</button>
-            </form>
-            <p onClick={toggleLogin}>Não tem uma conta? Cadastre-se</p>
+
+        {loginSuccess ? ( // Se login for bem-sucedido, exibe a mensagem
+          <div className="success-message">
+            <h2>Login efetuado com sucesso!</h2>
           </div>
         ) : (
-          <div className="modal-content">
-            <h2>Cadastro</h2>
-            <form>
-              <label>
-                Nome:
-                <input type="text" name="name" />
-              </label>
-              <label>
-                Email:
-                <input type="email" name="email" />
-              </label>
-              <label>
-                Senha:
-                <input type="password" name="password" />
-              </label>
-              <button type="submit">Cadastrar</button>
-            </form>
-            <p onClick={toggleLogin}>Já tem uma conta? Faça login</p>
-          </div>
+          isLogin ? (
+            <div className="modal-content">
+              <h2>Login</h2>
+              <form onSubmit={handleLoginSubmit}>
+                <label>
+                  Usuário:
+                  <input type="text" name="username" required />
+                </label>
+                <label>
+                  Senha:
+                  <input type="password" name="password" required />
+                </label>
+                <button type="submit">Entrar</button>
+              </form>
+              <p onClick={toggleLogin}>Não tem uma conta? Cadastre-se</p>
+            </div>
+          ) : (
+            <div className="modal-content">
+              <h2>Cadastro</h2>
+              <form>
+                <label>
+                  Nome:
+                  <input type="text" name="name" required />
+                </label>
+                <label>
+                  Email:
+                  <input type="email" name="email" required />
+                </label>
+                <label>
+                  Senha:
+                  <input type="password" name="password" required />
+                </label>
+                <button type="submit">Cadastrar</button>
+              </form>
+              <p onClick={toggleLogin}>Já tem uma conta? Faça login</p>
+            </div>
+          )
         )}
       </Modal>
 
@@ -357,24 +401,6 @@ const Navbar = () => {
     </>
   );
 };
-const whatsappContainerStyle = {
-  position: "fixed",
-  bottom: "20px",
-  right: "20px",
-  border: "1px solid #ddd",
-  padding: "20px",
-  backgroundColor: "#f9f9f9",
-  textAlign: "center",
-  borderRadius: "5px",
-  zIndex: 1000,
-};
 
-const linkStyle = {
-  color: "#25D366",
-  textDecoration: "none",
-  fontWeight: "bold",
-  display: "block",
-  marginTop: "10px",
-};
 
 export default Navbar;
