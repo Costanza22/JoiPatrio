@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import './App.css';
-
-
-
 import { FaRegNewspaper } from "react-icons/fa";
 import { SiMicrodotblog } from "react-icons/si";
 import { BsFillHousesFill } from "react-icons/bs";
@@ -13,7 +10,7 @@ function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [videoUrl, setVideoUrl] = useState('');
-  const [videoPlaying, setVideoPlaying] = useState(false); // Estado para controle de reprodução
+  const [videoPlaying, setVideoPlaying] = useState(false); 
 
   const images = [
     'https://omunicipiojoinville.com/wp-content/uploads/2023/03/palacete-doria-joinville.jpg',
@@ -35,7 +32,7 @@ function App() {
 
   const handleCloseVideo = () => {
     setVideoUrl('');
-    setVideoPlaying(false); // Reseta a reprodução ao fechar o vídeo
+    setVideoPlaying(false); 
   };
 
   const openModal = () => setModalIsOpen(true);
