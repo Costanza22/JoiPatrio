@@ -70,20 +70,21 @@ const Navbar = () => {
 
   const handleNotificationClick = () => {
     alert('Você tem novas notificações de comentários!');
-    setNewComments(0); // Reseta o contador de novos comentários
+    setNewComments(0); 
   };
 
-  // Função simulada para adicionar um novo comentário
+  
   const addComment = () => {
-    setNewComments(prevCount => prevCount + 1); // Incrementa o contador
+    setNewComments(prevCount => prevCount + 1); 
   };
 
   const handleSubmitQuestion = (e) => {
     e.preventDefault();
     console.log('Pergunta/Sugestão:', question);
     setQuestion('');
+    setNewComments(prevCount => prevCount + 1); 
     handleQuestionModalClose();
-  };
+};
 
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
@@ -92,11 +93,10 @@ const Navbar = () => {
 
   const handleLoginSubmit = (event) => {
     event.preventDefault();
-    // Lógica para autenticação do usuário
-    // Se a autenticação for bem-sucedida
+    
     setLoginSuccess(true);
-    setIsLoggedIn(true); // Marca o usuário como logado
-    closeModal(); // Fecha o modal após o login
+    setIsLoggedIn(true); 
+    closeModal(); 
   };
 
 
@@ -161,15 +161,17 @@ const Navbar = () => {
               {newComments > 0 && <span className="notification-badge">{newComments}</span>} {/* Exibe o badge de novas notificações */}
             </a>
           </li>
+          
         </ul>
         <div className="search-container">
-      <input
-        type="text"
-        placeholder="O que você procura?"
-        value={searchQuery}
-        onChange={handleSearchChange}
-      />
-      
+  <input
+    type="text"
+    placeholder="O que você procura?"
+    value={searchQuery}
+    onChange={handleSearchChange}
+    aria-label="Campo de pesquisa"
+  />
+  
           <FaSearch onClick={handleSearch} className="icon" />
         </div>
         <div className="social-icons">
@@ -333,6 +335,7 @@ const Navbar = () => {
         overlayClassName="modal-overlay"
       >
         <button onClick={handleQuestionModalClose} className="close-button">X</button>
+
         <form onSubmit={handleSubmitQuestion}>
           <h2>Pergunta/Sugestão</h2>
           <textarea
