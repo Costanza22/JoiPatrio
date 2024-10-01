@@ -111,6 +111,7 @@ const Navbar = () => {
 
   const closeVideo = () => setVideoVisible(false); 
 
+  
   return (
     
     <>
@@ -130,21 +131,22 @@ const Navbar = () => {
           <li><a href="#about" onClick={() => setShowAbout(!showAbout)}>Sobre</a></li>
           
           <li>
-            <a href="#casaroes" onClick={toggleDropdown}>
-              Casarões
-            </a>
-            {dropdownOpen && (
-              <ul className="dropdown-menu">
-                {casarões.map((casarao, index) => (
-                  <li key={index}>
-                    <Link to="#" onClick={() => handleCasaraoClick(casarao)}>
-                      {casarao}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
+  <a href="#casaroes" onClick={toggleDropdown}>
+    Pré-Demonstração
+  </a>
+  {dropdownOpen && (
+    <ul className="dropdown-menu">
+      {casarões.map((casarao, index) => (
+        <li key={index}>
+          <Link to="#" onClick={() => handleCasaraoClick(casarao)}>
+            {casarao}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  )}
+</li>
+
           <li>
             <a href="#contato" onClick={() => setShowWhatsAppContainer(!showWhatsAppContainer)}>
               <FaWhatsapp size={20} />
