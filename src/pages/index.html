@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Patrimônio Histórico de Joinville</title>
+    <style type="text/css">
+       body {
+    font-family: 'Courier New', Courier, monospace; /* Alterado para 'Courier New' */
+    background-image: url("http://4.bp.blogspot.com/_HKd_aI3JnTs/TNliqN9eTXI/AAAAAAAAA24/eIXBkeXhxrc/s1600/digitalizar00101cr4.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: burlywood;  /* Adicionado fundo 'blanchedalmond' */
+    color: #333; /* Alterado a cor do texto para #333 */
+}
+
+h1 {
+    background-color: #DEB887;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Cursive', cursive;
+    font-size: 2.5em;
+    border-radius: 10px;
+}
+
+.main {
+    margin: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 20%;
+    display: inline-block;
+    box-shadow: 5px 2px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    margin: 20px;
+    background-color: burlywood;  /* Cor de fundo ajustada */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 4px 30px rgba(0, 0, 0, 0.7);
+}
+
+.image img {
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.title {
+    text-align: center;
+    padding: 10px;
+}
+
+.title h2 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.des {
+    padding: 10px;
+    text-align: justify;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+a {
+    color: #4B3D33;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Adicionado estilo para o popup de vídeo */
+.video-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    z-index: 1000;
+    border-radius: 15px;
+    border: 5px solid #FFD700;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    max-width: 600px;
+}
+
+.video-popup video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+    </style>
+</head>
+<body>
+
+<h1>PATRIMÔNIO HISTÓRICO DE JOINVILLE</h1>
+
+<div class="main">
+
+    <div class="card">
+      <a href="cidadela.html">
+            <div class="image">
+                <img src="https://static.ndmais.com.br/2021/03/cidadela-cultural-antarctica.jpg" alt="Cidade Antártica">
+            </div>
+            <div class="title">
+                <h2>CIDADELA ANTÁRTICA</h2>
+            </div>
+            <div class="des">
+                <p>A história do espaço começou em 1889, com a abertura da cervejaria Tiede. Mais tarde, foi rebatizado como Cervejaria Catharinense.</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="antigo-moinho.html">
+            <div class="image">
+                <img src="https://i.ytimg.com/vi/KWAr-kzXhvw/maxresdefault.jpg" alt="Antigo Moinho de Joinville">
+            </div>
+            <div class="title">
+                <h2>ANTIGO MOINHO DE JOINVILLE</h2>
+            </div>
+            <div class="des">
+                <p>Construído em 1913, foi o ponto de desembarque dos imigrantes fundadores de Joinville em 1851.</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="antiga-prefeitura.html">
+            <div class="image">
+                <img src="https://hinsching.files.wordpress.com/2020/10/prefeitura.jpg" alt="Antiga Prefeitura de Joinville">
+            </div>
+            <div class="title">
+                <h2>ANTIGA PREFEITURA DE JOINVILLE</h2>
+            </div>
+            <div class="des">
+                <p>Adquirido em 2003, tombado como patrimônio histórico, já foi sede da revendedora de automóveis Ford na década de 1950.</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="casarao-procopio.html">
+            <div class="image">
+                <img src="https://i0.wp.com/www.joinvilleiros.com.br/wp-content/uploads/2018/04/casa-procopio.jpg?w=500&ssl=1" alt="Casarão de Procópio Gomes">
+            </div>
+            <div class="title">
+                <h2>CASARÃO DE PROCÓPIO GOMES</h2>
+            </div>
+            <div class="des">
+                <p>Construído em 1913, o imóvel passou a abrigar um salão de festas infantis em 2004, atualmente está abandonado.</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="palacete-niemeyer.html">
+            <div class="image">
+                <img src="https://static.ndmais.com.br/2011/01/28-01-2011-22-10-29-palacete-foto2-tentar-usar-esta.jpg" alt="Palacete Niemeyer">
+            </div>
+            <div class="title">
+                <h2>PALACETE NIEMEYER</h2>
+            </div>
+            <div class="des">
+                <p>Construído em 1906, o casarão passou por polêmica antes de ser preservado em 1982, ao invés de ser demolido.</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="casa-kruger.html">
+            <div class="image">
+                <img src="https://hinsching.files.wordpress.com/2019/03/54258205_1933473963431588_6821522193449484288_n.jpg" alt="Casa Krüger">
+            </div>
+            <div class="title">
+                <h2>CASA KRÜGER</h2>
+            </div>
+            <div class="des">
+                <p>Tombada pelo Patrimônio Histórico e Artístico Nacional, a casa foi inaugurada em 1925 e possui uma rica história.</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="casa-fleith.html">
+            <div class="image">
+                <img src="https://hinsching.files.wordpress.com/2019/01/joinville-casa-de-alvino-fleith-imagem-iphan.jpg" alt="Casa Fleith">
+            </div>
+            <div class="title">
+                <h2>CASA FLEITH</h2>
+            </div>
+            <div class="des">
+                <p>Construída em 1913, a Casa Fleith é um exemplar significativo da antiga Colônia Dona Francisca.</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="casa-parucker.html">
+            <div class="image">
+                <img src="https://hinsching.files.wordpress.com/2019/01/dscn1479.jpg" alt="Casa Parucker">
+            </div>
+            <div class="title">
+                <h2>CASA PARUCKER</h2>
+            </div>
+            <div class="des">
+                <p>Construída por volta de 1900, atualmente está em estado de abandono e pertenceu à família Parucker.</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="museu-nacional.html">
+            <div class="image">
+                <img src="https://danieldalonso.files.wordpress.com/2013/01/joinville-7510.jpg" alt="Museu Nacional da Imigração">
+            </div>
+            <div class="title">
+                <h2>MUSEU NACIONAL DA IMIGRAÇÃO</h2>
+            </div>
+            <div class="des">
+                <p>Iniciado em 1867, o Museu é um importante patrimônio da história da imigração em Joinville.</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="card">
+        <a href="vila-amazilda.html">
+            <div class="image">
+                <img src="https://static.ndmais.com.br/2011/02/11-02-2011-22-00-06-casa-antiga-ontem.jpg" alt="Vila Amazilda">
+            </div>
+            <div class="title">
+                <h2>VILA AMAZILDA</h2>
+            </div>
+            <div class="des">
+                <p>A Vila Amazilda foi uma das primeiras vilas operárias, construída para atender aos trabalhadores da indústria local.</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

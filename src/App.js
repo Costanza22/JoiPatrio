@@ -6,8 +6,7 @@ import { SiMicrodotblog } from "react-icons/si";
 import { BsFillHousesFill } from "react-icons/bs";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { IoChatboxOutline } from "react-icons/io5";
-
-
+import { GiWindmill } from 'react-icons/gi';
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -69,15 +68,18 @@ function App() {
         </div>
       </div>
       <div className="container">
-  <header className="App-header">
-    <h1>Patrimônio Histórico de Joinville</h1>
+        <header className="App-header">
+          <h1>Joi Patrio <GiWindmill style={{ verticalAlign: 'middle' }} /></h1>
+          <p>Descubra a rica história de Joinville através de seus casarões históricos. Minha missão ao criar este site foi preservar e valorizar o patrimônio cultural da cidade, oferecendo uma experiência única que conecta passado e presente. Explore cada detalhe e conheça as histórias que moldaram a identidade de Joinville.</p>
+
+
     <div className="button-container">
       <a href="index.html" target="_blank" rel="noopener noreferrer">
-      <button 
-  className="styled-button" 
-  onClick={() => window.location.href = '/index.html'}>
+      <button className="styled-button" 
+  onClick={() => window.location.href = 'https://patrim-nio-hist-rico-de-joinville.vercel.app/'}>
   <strong>Acesse!</strong>
 </button>
+
 
       </a>
     </div>
