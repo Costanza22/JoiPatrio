@@ -72,7 +72,7 @@ Usuário: acessa a navegação pelos casarões, visualiza informações específ
 
 Visitante: pode apenas acessar uma demonstração limitada, sem a necessidade de login.
 
-## 7. Modelagem C4
+## 9. Modelagem C4
 
 ![baixados (1)](https://github.com/user-attachments/assets/d46c9fbe-007e-4d04-aa8f-b63b52ba6d1e)
 
@@ -84,7 +84,7 @@ Usuário Registrado: tem acesso completo ao sistema após o login, podendo acess
 
 Administrador: gerencia o cadastro de casarões e o gerenciamento de usuários.
 
-## 8. API do Google Maps
+## 10. API do Google Maps
 A API do Google Maps é uma ferramenta poderosa que permite a integração de mapas interativos em aplicações web e móveis. No contexto do projeto "Joi Patrio", essa API será utilizada para criar um mapa virtual que exibe a localização de cada casarão histórico em Joinville.
 
 **Funcionalidades principais:**
@@ -97,7 +97,7 @@ A API do Google Maps é uma ferramenta poderosa que permite a integração de ma
 
 <img width="958" alt="mapavirtual" src="https://github.com/user-attachments/assets/f87ae93b-957e-4126-9810-f49ad8a15be4">
 
-## 9. Referências
+## 11. Referências
 - [Lista de Imóveis Protegidos Culturalmente de Joinville](https://www.joinville.sc.gov.br/publicacoes/listas-de-imoveis-com-protecao-cultural/)
 - [Patrimônio Cultural do Paraná](https://www.patrimoniocultural.pr.gov.br/Curitiba)
 
