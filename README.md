@@ -1,4 +1,4 @@
-## Joi Patrio - Sistema Web de Casarões Históricos
+# Projeto Joi Patrio
 
 <img width="1234" alt="image" src="https://github.com/user-attachments/assets/7deab0aa-4ce6-415c-b2b6-2818289958ae">
 
@@ -14,41 +14,46 @@ A falta de informações sobre a história da cidade como também dos casarões 
 a necessidade de conscientizar sobre a preservação do patrimônio histórico motivou a criação deste sistema. Ele facilita o acesso à história dos casarões, conectando os usuários com o passado cultural de Joinville e promovendo o engajamento da comunidade.
 
 
-# Projeto Joi Patrio
+## 4. Funcionalidades Principais
+Navegação pelos Casarões: Usuários podem acessar informações dos casarões clicando em um botão "Acessar", que os redireciona para uma lista de casarões específicos. Ao selecionar um casarão, o usuário é levado para uma página dedicada a ele, contendo detalhes e imagens.
 
-## 1. Descrição
+Cadastro de Casarões: Administradores podem adicionar novos casarões ao sistema, preenchendo informações detalhadas como descrição, imagens, e histórico.
 
-O projeto "Joi Patrio" é uma aplicação web que visa promover e preservar o patrimônio histórico de Joinville, permitindo que usuários visualizem informações sobre casarões históricos. A plataforma oferece funcionalidades de cadastro, gerenciamento e visualização de casarões, proporcionando uma experiência rica e interativa.
+Visualização de Casarões: Exibição de fotos e descrições dos casarões, além de seu histórico e relevância patrimonial.
 
-## 2. Funcionalidades Principais
+Gerenciamento de Usuários: Administradores podem gerenciar as contas de usuários, ativando, desativando ou excluindo perfis.
 
-- **Navegação pelos Casarões:** Usuários podem acessar informações dos casarões clicando em botões dedicados, em vez de realizar uma pesquisa.
-- **Cadastro de Casarões:** Administradores podem adicionar novos casarões com detalhes completos.
-- **Visualização de Casarões:** Exibição de fotos e descrições dos casarões.
-- **Gerenciamento de Usuários:** Administradores gerenciam contas de usuários (ativar, desativar, excluir).
-- **Autenticação de Usuários:** Registro e login de usuários utilizando JWT para segurança.
-- **Configurações de Usuário:** Permite personalização de temas (modo escuro/claro) e gerenciamento de notificações.
-- **Edição de Perfis:** Usuários podem editar suas informações e realizar upload de foto de perfil.
+Autenticação de Usuários: Implementação de login e registro para usuários, com autenticação baseada em JWT (JSON Web Token) para garantir a segurança das sessões.
 
-## 3. Requisitos Funcionais
+Configurações de Usuário: Usuários podem personalizar preferências de temas (modo escuro/claro) e gerenciar suas notificações.
 
-- **Acesso a Casarões:** Usuários acessam informações dos casarões por meio de botões, com uma lista de casarões já cadastrados.
-- Login e registro de usuários.
-- Configuração de preferências pelos usuários registrados.
-- Cadastro e gerenciamento de casarões pelos administradores.
-- Detalhamento completo dos casarões (imagens, descrições, histórico).
-- Gerenciamento de usuários pelo administrador.
-- Navegação responsiva para dispositivos móveis e desktop.
+## 5. Requisitos Funcionais
 
-## 4. Requisitos Não Funcionais
+Acesso a Casarões: Usuários podem acessar uma lista de casarões clicando no botão "Acessar". Ao clicar em um casarão específico, são redirecionados para uma página com detalhes completos.
 
-- **Responsividade:** Design adaptável para dispositivos móveis e desktop.
-- **Performance:** Pesquisa rápida com menos de 2 segundos de resposta.
-- **Segurança:** Proteção dos dados de usuários com JWT.
-- **Escalabilidade:** Suporte a múltiplos usuários simultâneos.
-- **Uploads de Imagens:** Suporte a formatos PNG e JPEG, com limites de tamanho.
+Autenticação: O sistema deve permitir o login e registro de novos usuários, garantindo que cada usuário tenha suas credenciais protegidas com JWT.
 
-## 5. Tecnologias Utilizadas
+Personalização de Preferências: Usuários registrados podem alterar configurações como temas (modo escuro/claro) e notificações no painel de configurações.
+
+Gerenciamento de Casarões: Administradores podem adicionar, editar e remover casarões no sistema, garantindo que as informações estejam sempre atualizadas.
+
+Visualização de Casarões: Exibição detalhada de cada casarão, com imagens e descrições históricas.
+
+Gerenciamento de Usuários: Administradores podem ativar, desativar e excluir usuários.
+
+Responsividade: O site deve ser responsivo, garantindo uma boa experiência tanto em dispositivos móveis quanto em desktops.
+
+## 6. Requisitos Não Funcionais
+
+Responsividade: A interface deve ser adaptável e fluida em diversos tamanhos de tela, incluindo dispositivos móveis e desktops.
+
+Performance: As páginas de casarões e todas as interações (como login, acesso a casarões) devem ter um tempo de resposta inferior a 2 segundos.
+
+Segurança: Todas as sessões de usuários devem ser protegidas por JWT e os dados sensíveis, como senhas, devem ser criptografados.
+
+Escalabilidade: O sistema deve ser capaz de suportar vários usuários simultâneos, tanto para visualizar os casarões quanto para realizar ações administrativas.
+
+## 7. Tecnologias Utilizadas
 
 - **Front-end:** React
 - **Back-end:** Node.js
@@ -57,64 +62,42 @@ O projeto "Joi Patrio" é uma aplicação web que visa promover e preservar o pa
 - **CI/CD:** Github Actions
 - **Ferramentas de Análise de Código:** SonarQube
 
-## 6. Diagrama de Casos de Uso
+## 8. Diagrama de Casos de Uso
 
-![CosPatrio drawio](https://github.com/user-attachments/assets/289ec1af-0450-4a20-b9fb-5b64edf6e182)
+![baixados](https://github.com/user-attachments/assets/dcf93ab0-4084-4a7e-aac9-7ba1ab4153fe)
 
-**Atores:** 
-- **Visitante:** Usuário não registrado que acessa o sistema.
-- **Usuário Registrado:** Usuário que se registrou e fez login no sistema.
-- **Administrador:** Usuário com permissões para gerenciar o conteúdo do sistema.
+Administrador: tem acesso total, incluindo as funcionalidades de gerenciar e adicionar casarões, além do gerenciamento de usuários.
 
-**Funcionalidades**
-- **Buscar Casarões:** Permite que o visitante ou usuário registrado pesquise casarões históricos por nome.
-- **Cadastrar Casarões:** Permite que o administrador adicione novos casarões com informações detalhadas.
-- **Visualizar Casarões:** Permite a exibição de informações como fotos e descrição de cada casarão.
-- **Gerenciar Usuários:** Permite que o administrador gerencie o acesso de usuários ao sistema (ativar, desativar ou excluir contas).
-- **Autenticação:** Permite que os usuários se registrem e façam login no sistema.
-- **Configurações de Usuário:** Permite que os usuários registrados alterem suas preferências (modo escuro/claro, notificações).
-- **Edição de Perfis:** Permite que os usuários editem suas informações de perfil, incluindo upload de fotos.
+Usuário: acessa a navegação pelos casarões, visualiza informações específicas e pode configurar preferências após o login.
+
+Visitante: pode apenas acessar uma demonstração limitada, sem a necessidade de login.
 
 ## 7. Modelagem C4
 
-<img width="584" alt="C4" src="https://github.com/user-attachments/assets/43d7f3e2-3d5b-45b8-a857-b6b34132ec80">
+![baixados (1)](https://github.com/user-attachments/assets/d46c9fbe-007e-4d04-aa8f-b63b52ba6d1e)
 
-**Diagrama de Containers (Resumo):**
+O Sistema Joi Patrio é o foco principal. Ele interage com três atores principais:
 
-- **Atores Externos:** Visitante, Usuário Registrado, Administrador.
-- **Frontend (React):** Interface do usuário, exibe informações e permite interação.
-- **Backend (Node.js + Express):** Lógica do sistema, autenticação, requisições CRUD (criação, leitura, atualização, exclusão).
-- **Banco de Dados (MySQL):** Armazena os dados dos casarões, usuários, preferências.
-- **Serviços Externos (JWT para Autenticação):** Garantia de segurança e autorização.
+Visitante: pode visualizar a demonstração do site (exibição limitada de casarões).
 
-### API:
+Usuário Registrado: tem acesso completo ao sistema após o login, podendo acessar casarões e ajustar preferências.
 
-- **Frontend (React):** Envia requisições HTTP (usando axios) para a API do backend.
-  - `GET /casaroes`: para listar casarões.
-  - `POST /auth/login`: para autenticar usuários.
-  - `PUT /usuario/:id`: para atualizar o perfil do usuário.
-
-- **Backend (Node.js + Express):** O backend recebe essas requisições e responde com os dados ou realiza ações como autenticação, consulta ou modificação no banco de dados.
+Administrador: gerencia o cadastro de casarões e o gerenciamento de usuários.
 
 ## 8. API do Google Maps
+A API do Google Maps é uma ferramenta poderosa que permite a integração de mapas interativos em aplicações web e móveis. No contexto do projeto "Joi Patrio", essa API será utilizada para criar um mapa virtual que exibe a localização de cada casarão histórico em Joinville.
 
-Para criar um mapa Virtual com a localização de cada casarão.
+**Funcionalidades principais:**
 
-A API seria composta por diversas rotas REST, como:
+**Marcação de Localizações:** Cada casarão terá um marcador no mapa, permitindo que os usuários visualizem sua localização exata.
 
-- `/auth` para autenticação e registro de usuários.
-- `/casaroes` para busca, cadastro e gerenciamento de casarões.
-- `/usuarios` para edição de perfil e gerenciamento de usuários.
+**Navegação Interativa:** Os usuários poderão interagir com o mapa, dando zoom e se movendo entre as diferentes localizações dos casarões.
 
-## 9. Exemplo de Fluxo Completo no Diagrama de Containers:
+**Informações Detalhadas:** Ao clicar em um marcador, os usuários poderão acessar informações adicionais sobre o casarão, como fotos, descrições e histórico, melhorando a experiência de exploração.
 
-- Um Visitante acessa a página inicial no Frontend (React).
-- O Frontend se comunica com o Backend (Node.js) para realizar uma pesquisa de casarões.
-- O Backend consulta o Banco de Dados e retorna os resultados para o Frontend, que exibe ao usuário.
-- Um Usuário Registrado faz login no sistema, o que aciona o Serviço de Autenticação (JWT) para validar suas credenciais.
-- Um Administrador acessa as funcionalidades de gerenciamento de usuários e casarões, enviando requisições via Backend para o Banco de Dados.
+<img width="958" alt="mapavirtual" src="https://github.com/user-attachments/assets/f87ae93b-957e-4126-9810-f49ad8a15be4">
 
-## 10. Referências
+## 9. Referências
 - [Lista de Imóveis Protegidos Culturalmente de Joinville](https://www.joinville.sc.gov.br/publicacoes/listas-de-imoveis-com-protecao-cultural/)
 - [Patrimônio Cultural do Paraná](https://www.patrimoniocultural.pr.gov.br/Curitiba)
 
