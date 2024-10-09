@@ -1,0 +1,81 @@
+/* components/Chatbot.css */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    max-width: 80%;
+    border: 2px solid #8B4513; /* Cor da borda em marrom */
+    border-radius: 10px;
+    background-color: burlywood; /* Cor de fundo burlywood */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Sombra para um efeito 3D */
+    z-index: 1000;
+    font-family: 'Georgia', serif; /* Fonte vintage */
+  }
+  
+  .chatbot-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #DEB887; /* Cor do cabeçalho em um tom mais escuro */
+    color: #4B3D25; /* Cor do texto em marrom escuro */
+    border-radius: 10px 10px 0 0;
+    font-weight: bold; /* Destaca o título */
+  }
+  
+  .chatbot-messages {
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: #FFF8DC; /* Cor de fundo clara para as mensagens */
+    border-radius: 0 0 10px 10px; /* Arredondar a parte inferior */
+  }
+  
+  .chatbot-message {
+    margin: 5px 0;
+    padding: 5px 10px; /* Adicionando um pouco de preenchimento */
+    border-radius: 5px; /* Arredondar as mensagens */
+    max-width: 80%;
+  }
+  
+  .chatbot-message.user {
+    background-color: #FFD700; /* Cor de fundo para mensagens do usuário */
+    align-self: flex-end; /* Alinha as mensagens do usuário à direita */
+  }
+  
+  .chatbot-message.bot {
+    background-color: #D3B89B; /* Cor de fundo para mensagens do bot */
+    align-self: flex-start; /* Alinha as mensagens do bot à esquerda */
+  }
+  
+  .chatbot-input {
+    display: flex;
+    padding: 10px;
+    background-color: #FFF8DC; /* Cor de fundo do input */
+    border-top: 2px solid #8B4513; /* Borda superior do input */
+  }
+  
+  .chatbot-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #8B4513; /* Borda do input */
+    border-radius: 5px;
+    font-family: 'Georgia', serif; /* Fonte vintage para o input */
+  }
+  
+  .chatbot-input button {
+    padding: 10px 15px;
+    margin-left: 5px;
+    background-color: #8B4513; /* Cor de fundo do botão */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Georgia', serif; /* Fonte vintage para o botão */
+    transition: background-color 0.3s; /* Transição suave na mudança de cor */
+  }
+  
+  .chatbot-input button:hover {
+    background-color: #A0522D; /* Cor ao passar o mouse no botão */
+  }
+  
