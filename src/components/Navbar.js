@@ -3,12 +3,11 @@ import Modal from 'react-modal';
 import { BsPersonArmsUp } from 'react-icons/bs';
 import { FaSearch, FaQuestionCircle, FaWhatsapp } from 'react-icons/fa';
 import { FcAbout } from 'react-icons/fc';
-import Settings from './Settings';
-import EditProfile from './EditProfile';
 import './css/Navbar.css';
 import { Link } from 'react-router-dom';
 import { FaHouseFlag } from "react-icons/fa6";
 import { IoMdNotifications } from 'react-icons/io';
+
 
 Modal.setAppElement('#root');
 
@@ -16,8 +15,6 @@ const Navbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [highlightedText, setHighlightedText] = useState('');
-  const [showSettings, setShowSettings] = useState(false);
-  const [showEditProfile, setShowEditProfile] = useState(false);
   const [showQuestionModal, setShowQuestionModal] = useState(false);
   const [question, setQuestion] = useState('');
   const [showWhatsAppContainer, setShowWhatsAppContainer] = useState(false);
@@ -29,8 +26,10 @@ const Navbar = () => {
   const [selectedCasarao, setSelectedCasarao] = useState(null);
   const [videoVisible, setVideoVisible] = useState(false); 
   const [newComments, setNewComments] = useState(0);
- 
+  const [isButtonEnabled, setIsButtonEnabled] = useState(false);
+  
 
+  
   const casarões = [
     'Palacete Niemeyer',
     
@@ -112,6 +111,7 @@ const Navbar = () => {
   const closeVideo = () => setVideoVisible(false); 
 
   
+  
   return (
     
     <>
@@ -179,8 +179,7 @@ const Navbar = () => {
         <div className="social-icons">
           <BsPersonArmsUp onClick={openModal} className="icon" />
         </div>
-        {showSettings && <Settings />}
-        {showEditProfile && <EditProfile />}
+        
       </nav>
 
       {showAbout && (
