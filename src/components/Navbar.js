@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import { BsPersonArmsUp } from 'react-icons/bs';
 import { FaSearch, FaQuestionCircle, FaWhatsapp } from 'react-icons/fa';
@@ -7,162 +7,157 @@ import './css/Navbar.css';
 import { Link } from 'react-router-dom';
 import { FaHouseFlag } from "react-icons/fa6";
 import { IoMdNotifications } from 'react-icons/io';
-
+import { MdOutlineDarkMode, MdDarkMode } from 'react-icons/md';
 
 Modal.setAppElement('#root');
 
 const Navbar = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [highlightedText, setHighlightedText] = useState('');
-  const [showQuestionModal, setShowQuestionModal] = useState(false);
-  const [question, setQuestion] = useState('');
-  const [showWhatsAppContainer, setShowWhatsAppContainer] = useState(false);
-  const [showAbout, setShowAbout] = useState(false);
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [isLogin, setIsLogin] = useState(true);
-  const [loginSuccess, setLoginSuccess] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); 
-  const [selectedCasarao, setSelectedCasarao] = useState(null);
-  const [videoVisible, setVideoVisible] = useState(false); 
-  const [newComments, setNewComments] = useState(0);
-  const [isButtonEnabled, setIsButtonEnabled] = useState(false);
-  
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [searchQuery, setSearchQuery] = useState('');
+    const [highlightedText, setHighlightedText] = useState('');
+    const [showQuestionModal, setShowQuestionModal] = useState(false);
+    const [question, setQuestion] = useState('');
+    const [showWhatsAppContainer, setShowWhatsAppContainer] = useState(false);
+    const [showAbout, setShowAbout] = useState(false);
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [isLogin, setIsLogin] = useState(true);
+    const [loginSuccess, setLoginSuccess] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false); 
+    const [selectedCasarao, setSelectedCasarao] = useState(null);
+    const [videoVisible, setVideoVisible] = useState(false); 
+    const [newComments, setNewComments] = useState(0);
+    const [isDarkMode, setIsDarkMode] = useState(false);
 
-  
-  const casarões = [
-    'Palacete Niemeyer',
-    
-  ];
-  const handleLogin = () => {
-    setIsLoggedIn(true); 
-  };
-  const handleLogout = () => {
-    setIsLoggedIn(false); 
-  };
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
-  };
+    const casarões = [
+        'Palacete Niemeyer',
+    ];
 
-  const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
-  };
+    const toggleDropdown = () => {
+        setDropdownOpen(!dropdownOpen);
+    };
 
-  const handleSearch = () => {
-    setHighlightedText(searchQuery);
-  };
+    const handleSearchChange = (e) => {
+        setSearchQuery(e.target.value);
+    };
 
-  const highlightText = (text, query) => {
-    if (!query) return text;
-    const parts = text.split(new RegExp(`(${query})`, 'gi'));
-    return parts.map((part, index) =>
-      part.toLowerCase() === query.toLowerCase() ? (
-        <span key={index} className="highlight">{part}</span>
-      ) : (
-        part
-      )
-    );
-  };
+    const handleSearch = () => {
+        setHighlightedText(searchQuery);
+    };
 
-  const handleQuestionModalOpen = () => setShowQuestionModal(true);
-  const handleQuestionModalClose = () => setShowQuestionModal(false);
+    const highlightText = (text, query) => {
+        if (!query) return text;
+        const parts = text.split(new RegExp(`(${query})`, 'gi'));
+        return parts.map((part, index) =>
+            part.toLowerCase() === query.toLowerCase() ? (
+                <span key={index} className="highlight">{part}</span>
+            ) : (
+                part
+            )
+        );
+    };
 
-  const handleNotificationClick = () => {
-    alert('Você tem novas notificações de comentários!');
-    setNewComments(0); 
-  };
+    const handleQuestionModalOpen = () => setShowQuestionModal(true);
+    const handleQuestionModalClose = () => setShowQuestionModal(false);
 
-  
-  const addComment = () => {
-    setNewComments(prevCount => prevCount + 1); 
-  };
+    const handleNotificationClick = () => {
+        alert('Você tem novas notificações de comentários!');
+        setNewComments(0); 
+    };
 
-  const handleSubmitQuestion = (e) => {
-    e.preventDefault();
-    console.log('Pergunta/Sugestão:', question);
-    setQuestion('');
-    setNewComments(prevCount => prevCount + 1); 
-    handleQuestionModalClose();
-};
+    const toggleTheme = () => {
+        setIsDarkMode(prevMode => !prevMode);
+    };
 
-  const openModal = () => setModalIsOpen(true);
-  const closeModal = () => setModalIsOpen(false);
+    const handleSubmitQuestion = (e) => {
+        e.preventDefault();
+        console.log('Pergunta/Sugestão:', question);
+        setQuestion('');
+        setNewComments(prevCount => prevCount + 1); 
+        handleQuestionModalClose();
+    };
 
-  const toggleLogin = () => setIsLogin(!isLogin);
+    const openModal = () => setModalIsOpen(true);
+    const closeModal = () => setModalIsOpen(false);
 
-  const handleLoginSubmit = (event) => {
-    event.preventDefault();
-    
-    setLoginSuccess(true);
-    setIsLoggedIn(true); 
-    closeModal(); 
-  };
+    const toggleLogin = () => setIsLogin(!isLogin);
 
+    const handleLoginSubmit = (event) => {
+        event.preventDefault();
+        setLoginSuccess(true);
+        setIsLoggedIn(true); 
+        closeModal(); 
+    };
 
-  const handleCasaraoClick = (casarao) => {
-    setSelectedCasarao(selectedCasarao === casarao ? null : casarao);
-    setVideoVisible(false); 
-  };
+    const handleCasaraoClick = (casarao) => {
+        setSelectedCasarao(selectedCasarao === casarao ? null : casarao);
+        setVideoVisible(false); 
+    };
 
-  const handleImageClick = () => {
-    setVideoVisible(true); 
-  };
+    const handleImageClick = () => {
+        setVideoVisible(true); 
+    };
 
-  const closeVideo = () => setVideoVisible(false); 
+    const closeVideo = () => setVideoVisible(false); 
 
-  
-  
-  return (
-    
-    <>
-      <div className="navbar-header">
-        <img 
-          src="https://revistanews.com.br/wp-content/uploads/2018/09/moinho.jpg" 
-          alt="Bens Tombados"
-          className="navbar-logo"
-        />
-        <h1>Bens Tombados Joinville</h1>
-        <h2>Patrimônio Cultural da cidade</h2>
-      </div>
+    useEffect(() => {
+        document.body.className = isDarkMode ? 'dark' : 'light';
+    }, [isDarkMode]);
 
-      <nav className="navbar">
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about" onClick={() => setShowAbout(!showAbout)}>Sobre</a></li>
-          
-          <li>
-  <a href="#casaroes" onClick={toggleDropdown}>
-    Pré-Demonstração
+    return (
+        <>
+            <div className="navbar-header">
+                <img 
+                    src="https://revistanews.com.br/wp-content/uploads/2018/09/moinho.jpg" 
+                    alt="Bens Tombados"
+                    className="navbar-logo"
+                />
+                <h1>Bens Tombados Joinville</h1>
+                <h2>Patrimônio Cultural da cidade</h2>
+            </div>
+
+            <nav className="navbar">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about" onClick={() => setShowAbout(!showAbout)}>Sobre</a></li>
+                    <li>
+                        <a href="#casaroes" onClick={toggleDropdown}>
+                            Pré-Demonstração
+                        </a>
+                        {dropdownOpen && (
+                            <ul className="dropdown-menu">
+                                {casarões.map((casarao, index) => (
+                                    <li key={index}>
+                                        <Link to="#" onClick={() => handleCasaraoClick(casarao)}>
+                                            {casarao}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                    </li>
+                    
+                    <li>
+  <a href="#contato" onClick={() => setShowWhatsAppContainer(!showWhatsAppContainer)}>
+    <FaWhatsapp size={24} /> {/* Padronize o tamanho para 24 */}
   </a>
-  {dropdownOpen && (
-    <ul className="dropdown-menu">
-      {casarões.map((casarao, index) => (
-        <li key={index}>
-          <Link to="#" onClick={() => handleCasaraoClick(casarao)}>
-            {casarao}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  )}
+</li>
+<li>
+  <a href="#questions" onClick={handleQuestionModalOpen}>
+    <FaQuestionCircle size={24} /> {/* Mesmo tamanho */}
+  </a>
+</li>
+<li>
+  <a href="#notifications" onClick={handleNotificationClick}>
+    <IoMdNotifications size={24} /> {/* Mesmo tamanho */}
+    {newComments > 0 && <span className="notification-badge">{newComments}</span>}
+  </a>
+</li>
+<li>
+  <button onClick={toggleTheme} style={{ background: 'none', border: 'none', cursor: 'pointer', color: isDarkMode ? '#fff' : '#000' }}>
+    {isDarkMode ? <MdDarkMode size={24} /> : <MdOutlineDarkMode size={24} />} {/* Mesmo tamanho */}
+  </button>
 </li>
 
-          <li>
-            <a href="#contato" onClick={() => setShowWhatsAppContainer(!showWhatsAppContainer)}>
-              <FaWhatsapp size={20} />
-            </a>
-          </li>
-          <li>
-            <a href="#questions" onClick={handleQuestionModalOpen}>
-              <FaQuestionCircle size={20} />
-            </a>
-          </li>
-          <li>
-            <a href="#notifications" onClick={handleNotificationClick}>
-              <IoMdNotifications size={20} />
-              {newComments > 0 && <span className="notification-badge">{newComments}</span>} {/* Exibe o badge de novas notificações */}
-            </a>
-          </li>
           
         </ul>
         <div className="search-container">
@@ -173,6 +168,7 @@ const Navbar = () => {
     onChange={handleSearchChange}
     aria-label="Campo de pesquisa"
   />
+
   
           <FaSearch onClick={handleSearch} className="icon" />
         </div>
