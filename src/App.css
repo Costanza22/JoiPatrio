@@ -5,13 +5,16 @@ body {
 }
 
 .carousel-container {
-  width: 100%;
+  width: 100%; 
+  max-width: 1600px; 
   height: 300px;
   overflow: hidden;
   position: relative;
-  border: 10px solid burlywood; 
-  border-radius: 15px; 
+  border: 10px solid burlywood;
+  
+  box-sizing: border-box; 
 }
+
 .carousel {
   position: relative;
   width: 100%;
@@ -37,8 +40,7 @@ body {
 .carousel-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
-  border-radius: 15px; 
+  object-fit: cover;
 }
 
 
@@ -508,3 +510,48 @@ p {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
   cursor: pointer; 
 }
+.blog-image {
+  max-width: 60%; 
+  height: auto;   
+  border-radius: 8px; 
+  display: block; 
+  margin: 0 auto;
+}
+.blog-header {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.data-visualization {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color:blanchedalmond;
+}
+.casarao-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.casarao-table th,
+.casarao-table td {
+  border: 1px solid blanchedalmond;
+  padding: 12px;
+  text-align: left;
+}
+
+.casarao-table th {
+  background-color: black;
+  color: blanchedalmond;
+  font-weight: bold;
+}
+
+.casarao-table tr:nth-child(even) {
+  background-color: blanchedalmond;
+}
+
+.casarao-table tr:hover {
+  background-color: blanchedalmond;
+}
+

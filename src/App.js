@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
+import Chatbot from './components/Chatbot'; 
+import CasaPreservacaoChart from './components/CasaPreservacaoChart';
 import './App.css';
 import { FaRegNewspaper } from "react-icons/fa";
 import { SiMicrodotblog } from "react-icons/si";
 import { BsFillHousesFill } from "react-icons/bs";
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { IoChatboxOutline } from "react-icons/io5";
 import { GiWindmill } from 'react-icons/gi';
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [setModalIsOpen] = useState(false);
   const [videoUrl, setVideoUrl] = useState('');
   const [videoPlaying, setVideoPlaying] = useState(false); 
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
+  const [setIsLoggedIn] = useState(false); 
+  const [isChatOpen, setIsChatOpen] = useState(false);
   const images = [
     'https://omunicipiojoinville.com/wp-content/uploads/2023/03/palacete-doria-joinville.jpg',
     'https://facts.net/wp-content/uploads/2023/07/48-facts-about-joinville-1688694462.jpeg',
@@ -27,6 +30,7 @@ function App() {
     return () => clearInterval(interval);
   }, [images.length]);
 
+  
   const handleImageClick = (url) => {
     setVideoUrl(url);
   };
@@ -35,20 +39,19 @@ function App() {
     setVideoUrl('');
     setVideoPlaying(false); 
   };
-
-  const openModal = () => setModalIsOpen(true);
-  const closeModal = () => setModalIsOpen(false);
-
   const handlePlayVideo = () => {
     setVideoPlaying(true);
   };
   const toggleChatbot = () => {
     setIsChatbotOpen(!isChatbotOpen); 
   };
+  const handleLoginSuccess = () => {
+    setIsLoggedIn(true); 
+  };
 
   return (
     <div className="App">
-      <Navbar openModal={openModal} />
+      <Navbar onLoginSuccess={handleLoginSuccess} />
       
       <div className="carousel-container">
         <div className="carousel">
@@ -67,7 +70,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="container">
+       <div className="container">
         <header className="App-header">
           <h1>Joi Patrio <GiWindmill style={{ verticalAlign: 'middle' }} /></h1>
           <p>Descubra a rica história de Joinville através de seus casarões históricos. Minha missão ao criar este site foi preservar e valorizar o patrimônio cultural da cidade, oferecendo uma experiência única que conecta passado e presente. Explore cada detalhe e conheça as histórias que moldaram a identidade de Joinville.</p>
@@ -79,7 +82,6 @@ function App() {
   onClick={() => window.location.href = 'https://patrim-nio-hist-rico-de-joinville.vercel.app/'}>
   <strong>Acesse!</strong>
 </button>
-
 
       </a>
     </div>
@@ -168,31 +170,120 @@ function App() {
 <section className="blog-container">
   <div className="title-container">
     <SiMicrodotblog size={60} />
-    <h1 className="blog-title">Blog sobre Patrimônio Histórico</h1>
+    <h1 className="blog-title">
+      <a href="https://medium.com/@pinassef22/joipatrio-4932644877c2" target="_self" rel="noopener noreferrer">
+        Blog sobre Patrimônio Histórico
+      </a>
+    </h1>
   </div>
   <div className="blog-posts">
-    <article className="blog-post">
-      <h2>A importância de preservar os casarões antigos</h2>
-      <p>Os casarões históricos são marcos da história de Joinville e representam a cultura e a memória da cidade. Preservá-los é essencial para manter viva essa herança.</p>
-    </article>
-    <article className="blog-post">
-      <h2>Casarões mais emblemáticos de Joinville</h2>
-      <p>Alguns dos casarões mais conhecidos incluem o Palacete Niemeyer, a Casa da Memória, e o Museu Nacional de Imigração e Colonização.</p>
-    </article>
-    <article className="blog-post">
-      <h2>Desafios na preservação do patrimônio histórico</h2>
-      <p>A falta de investimentos e a ação do tempo são os principais desafios enfrentados na preservação desses imóveis, além do risco de incêndios.</p>
-    </article>
-    
+  <article className="blog-post">
+    <h2>Casarões Históricos de Joinville: Patrimônio e História</h2>
+    <p>
+      Joinville, conhecida como a cidade das flores, abriga uma rica herança cultural representada por seus casarões históricos. Esses edifícios não apenas retratam a arquitetura da época, mas também contam histórias que moldaram a cidade ao longo dos anos. Abaixo, apresentamos uma tabela com informações sobre alguns dos casarões mais emblemáticos de Joinville, incluindo seu ano de construção, status de preservação, localização e observações relevantes.
+    </p>
+    <table className="casarao-table">
+      <thead>
+        <tr>
+          <th>Nome do Casarão</th>
+          <th>Ano de Construção</th>
+          <th>Status de Preservação</th>
+          <th>Localização</th>
+          <th>Observações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Palacete Niemeyer</td>
+          <td>1910</td>
+          <td>Preservado</td>
+          <td>Rua Dom Jaime Câmara, 43</td>
+          <td>Um dos casarões mais emblemáticos da cidade.</td>
+        </tr>
+        <tr>
+          <td>Casa da Memória</td>
+          <td>1883</td>
+          <td>Preservado</td>
+          <td>Rua Dr. João Colin, 30</td>
+          <td>Sede do Museu da Imigração e Colonização.</td>
+        </tr>
+        <tr>
+          <td>Museu Nacional de Imigração</td>
+          <td>1940</td>
+          <td>Preservado</td>
+          <td>Rua Dr. João Colin, 30</td>
+          <td>Importante para a história da imigração na cidade.</td>
+        </tr>
+        <tr>
+          <td>Casa Fritz Alt</td>
+          <td>1922</td>
+          <td>Preservado</td>
+          <td>Rua Dom Jaime Câmara, 40</td>
+          <td>Centro cultural com exposições e eventos.</td>
+        </tr>
+        <tr>
+          <td>Casa da Cultura Fausto Rocha Júnior</td>
+          <td>1940</td>
+          <td>Preservado</td>
+          <td>Rua 15 de Novembro, 1</td>
+          <td>Promove eventos culturais e artísticos.</td>
+        </tr>
+        <tr>
+          <td>Maison de Joinville</td>
+          <td>1852</td>
+          <td>Em risco</td>
+          <td>Avenida Hermann August Lepper</td>
+          <td>Planejada para ser um palácio, atualmente em estado de conservação precário.</td>
+        </tr>
+        <tr>
+          <td>Palácio dos Príncipes</td>
+          <td>1852</td>
+          <td>Em risco</td>
+          <td>Centro</td>
+          <td>Antigo casarão de administração da colônia Dona Francisca.</td>
+        </tr>
+        <tr>
+          <td>Casa Neitzel</td>
+          <td>1920</td>
+          <td>Preservado</td>
+          <td>Rua Santos Dumont, 105</td>
+          <td>Conhecida por sua arquitetura e valor histórico.</td>
+        </tr>
+        <tr>
+          <td>Casa do Brigadeiro</td>
+          <td>1890</td>
+          <td>Preservado</td>
+          <td>Rua XV de Novembro, 215</td>
+          <td>Casa com forte apelo histórico na região.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      <CasaPreservacaoChart />
+    </p>
+</article>
+
+
+
+      {/* Chatbot Icon */}
+      <div className="chat-icon" onClick={toggleChatbot}>
+          <IoChatboxOutline size={30} />
+        </div>
+
   </div>
 </section>
 <footer>
         <p>Todos os direitos reservados &copy; 2024 - Desenvolvido por Costanza Pasquotto Assef</p>
       </footer>
       </main>
-   <div className="chat-icon">
+      
+    {/* Ícone do chat */}
+    <div className="chat-icon" onClick={toggleChatbot}>
         <IoChatboxOutline size={30} />
       </div>
+
+      {/* Chatbot */}
+      <Chatbot isOpen={isChatbotOpen} onClose={toggleChatbot} />
     </div>
   );
 }
