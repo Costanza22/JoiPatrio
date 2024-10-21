@@ -8,6 +8,8 @@ import { SiMicrodotblog } from "react-icons/si";
 import { BsFillHousesFill } from "react-icons/bs";
 import { IoChatboxOutline } from "react-icons/io5";
 import { GiWindmill } from 'react-icons/gi';
+import VoiceAccessibility from './components/VoiceAccessibility';
+
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [setModalIsOpen] = useState(false);
@@ -264,11 +266,18 @@ function App() {
 </article>
 
 
+<div className="voice-accessibility-icon" title="Ativar acessibilidade de voz">
+    <VoiceAccessibility style={{ width: '20px', height: '20px' }} />
+</div>
+
+
 
       {/* Chatbot Icon */}
-      <div className="chat-icon" onClick={toggleChatbot}>
+      <div className="chat-icon"  onClick={toggleChatbot}>
           <IoChatboxOutline size={30} />
         </div>
+
+        
 
   </div>
 </section>
