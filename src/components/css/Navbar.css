@@ -401,3 +401,69 @@ body.dark {
   background-color: gray;
   
 }
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-right: 10px; 
+  background-color: burlywood;
+  padding: 5px 10px;
+  border-radius: 5px;
+  animation: blink 1s infinite; 
+}
+
+.arrow-shape {
+  width: 0;
+  height: 0;
+  border-left: 10px solid burlywood; 
+  border-top: 5px solid transparent; 
+  border-bottom: 5px solid transparent; 
+  margin-left: 5px; 
+}
+
+.icon {
+  font-size: 24px; 
+  cursor: pointer;
+}
+
+.tooltip {
+  position: relative; 
+  cursor: pointer; 
+}
+
+.tooltip-text {
+  visibility: hidden; 
+  width: 150px; 
+  background-color: black; 
+  color: #fff; 
+  text-align: center; 
+  border-radius: 5px; 
+  padding: 5px; 
+  position: absolute; 
+  z-index: 1; 
+  bottom: 125%; 
+  left: 50%; 
+  margin-left: -75px; 
+  opacity: 0; 
+  transition: opacity 0.3s; 
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible; 
+  opacity: 1;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
