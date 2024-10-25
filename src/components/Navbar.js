@@ -27,6 +27,7 @@ const Navbar = () => {
     const [videoVisible, setVideoVisible] = useState(false); 
     const [newComments, setNewComments] = useState(0);
     const [isDarkMode, setIsDarkMode] = useState(false);
+    
 
     const casarões = [
         'Palacete Niemeyer',
@@ -41,7 +42,8 @@ const Navbar = () => {
     };
 
     const handleSearch = () => {
-        setHighlightedText(searchQuery);
+      const baseURL = 'https://www.iphan.gov.br/'; // URL do IPHAN
+      window.open(`${baseURL}?q=${searchQuery}`, '_blank'); // Redireciona para o site do IPHAN em uma nova aba
     };
 
     const highlightText = (text, query) => {
@@ -82,11 +84,11 @@ const Navbar = () => {
     const toggleLogin = () => setIsLogin(!isLogin);
 
     const handleLoginSubmit = (event) => {
-        event.preventDefault();
-        setLoginSuccess(true);
-        setIsLoggedIn(true); 
-        closeModal(); 
+      event.preventDefault();
+      setLoginSuccess(true);
+      closeModal();
     };
+  
 
     const handleCasaraoClick = (casarao) => {
         setSelectedCasarao(selectedCasarao === casarao ? null : casarao);
@@ -160,18 +162,15 @@ const Navbar = () => {
 
           
         </ul>
+        
         <div className="search-container">
-  <input
-    type="text"
-    placeholder="O que você procura?"
-    value={searchQuery}
-    onChange={handleSearchChange}
-    aria-label="Campo de pesquisa"
-  />
-
-  
-          <FaSearch onClick={handleSearch} className="icon" />
-        </div>
+      <span className="pulsing-text">Pesquise no site do IPHAN</span>
+      <span className="tooltip">
+        <FaSearch onClick={handleSearch} className="icon tooltip-icon" />
+        <span className="tooltip-text">Maiores informações aqui</span>
+      </span>
+    </div>
+    
         <div className="social-icons">
           <BsPersonArmsUp onClick={openModal} className="icon" />
         </div>
