@@ -11,12 +11,12 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v3  # Updated from v2 to v3
+        uses: actions/checkout@v3  # Updated from v2 to v3 for compatibility with Node.js 20
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3  # Updated from v2 to v3
+        uses: actions/setup-node@v3  # Updated from v2 to v3 for compatibility with Node.js 20
         with:
-          node-version: '16'  # Ensures Node.js 16 is used
+          node-version: '20'  # Sets Node.js 20 explicitly
 
       - name: Install dependencies
         run: npm install
