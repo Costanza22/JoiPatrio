@@ -1,103 +1,58 @@
-# Projeto Joi Patrio
+## Joi Patrio
+## Tema do Projeto
+O tema do projeto é o desenvolvimento de uma plataforma web que documenta e divulga o patrimônio histórico de Joinville, enfocando especialmente os casarões históricos. A aplicação terá uma interface intuitiva, onde os usuários poderão visualizar informações sobre cada casarão, bem como imagens e detalhes relevantes.
 
-<img width="1234" alt="image" src="https://github.com/user-attachments/assets/7deab0aa-4ce6-415c-b2b6-2818289958ae">
+## Resumo do Projeto
+O projeto Joi Patrio surgiu com o intuito de valorizar e preservar o patrimônio histórico de Joinville, através de uma plataforma web que permite a catalogação e a divulgação de casarões históricos. A ideia foi inspirada na necessidade de resgatar a história local e torná-la acessível para a comunidade e visitantes, promovendo a conscientização sobre a importância da conservação do patrimônio cultural.
 
+## Introdução
 
-## 1. Visão Geral do Projeto
-O Joi Patrio é um sistema web desenvolvido em React para cadastrar, gerenciar e visualizar casarões históricos em Joinville. Ele oferece uma plataforma onde visitantes podem explorar informações e administradores podem gerenciar o conteúdo. Usuários registrados possuem funcionalidades extras, como preferências personalizadas e acesso a detalhes históricos dos casarões.
+Joinville, cidade rica em cultura e história, abriga uma variedade de casarões que representam a arquitetura e a herança cultural da região. No entanto, muitos desses casarões não são amplamente conhecidos ou valorizados. O projeto Joi Patrio busca preencher essa lacuna ao criar uma plataforma que facilite a catalogação, divulgação e valorização dos casarões históricos da cidade, permitindo que cidadãos e turistas possam explorar e aprender mais sobre esse patrimônio.
 
-## 2. Importância do Patrimônio Histórico em Joinville
-Joinville é rica em história, e seus casarões são símbolos desse passado cultural. A preservação desses imóveis é essencial para manter viva a identidade histórica da cidade e proporcionar educação à comunidade local e visitantes.
+## Justificativa
+A relevância do projeto no campo da engenharia de software é clara, pois propõe uma solução que alia tecnologia à valorização cultural. Ao desenvolver uma plataforma web para a catalogação de casarões, o projeto demonstra como a aplicação de técnicas de engenharia de software pode contribuir para a preservação do patrimônio histórico, ao mesmo tempo em que proporciona uma experiência interativa e educativa para os usuários.
 
-## 3. Motivação do Projeto
-A falta de informações sobre a história da cidade como também dos casarões prejudica tanto estudantes de Arquitetura e Urbanismo que querem estudar e adquirir conhecimento como também para amantes do Patrimônio Histórico além disso
-a necessidade de conscientizar sobre a preservação do patrimônio histórico motivou a criação deste sistema. Ele facilita o acesso à história dos casarões, conectando os usuários com o passado cultural de Joinville e promovendo o engajamento da comunidade.
+## Objetivos
+O objetivo principal do projeto é desenvolver uma aplicação web que permita a catalogação e a visualização de casarões históricos em Joinville. Os objetivos secundários incluem:
 
+Facilitar o acesso às informações sobre os casarões, incluindo sua localização, história, e características arquitetônicas.
 
-## 4. Funcionalidades Principais
-Navegação pelos Casarões: Usuários podem acessar informações dos casarões clicando em um botão "Acessar", que os redireciona para uma lista de casarões específicos. Ao selecionar um casarão, o usuário é levado para uma página dedicada a ele, contendo detalhes e imagens.
+Implementar funcionalidades interativas que permitam aos usuários explorar os casarões em um mapa.
 
-Cadastro de Casarões: Administradores podem adicionar novos casarões ao sistema, preenchendo informações detalhadas como descrição, imagens, e histórico.
+Garantir a usabilidade da aplicação, de forma que todos possam facilmente navegar e acessar as informações.
 
-Visualização de Casarões: Exibição de fotos e descrições dos casarões, além de seu histórico e relevância patrimonial.
+## Problemas a Resolver
+Falta de informação acessível: Muitas pessoas não têm conhecimento sobre a história e a importância dos casarões históricos em Joinville.
 
-Gerenciamento de Usuários: Administradores podem gerenciar as contas de usuários, ativando, desativando ou excluindo perfis.
+Dificuldade de acesso a informações: A ausência de uma plataforma unificada torna difícil a busca por informações sobre o patrimônio histórico.
 
-Autenticação de Usuários: Implementação de login e registro para usuários, com autenticação baseada em JWT (JSON Web Token) para garantir a segurança das sessões.
+Baixa interação com a comunidade: Há uma necessidade de promover o engajamento da comunidade na preservação do patrimônio histórico.
 
-Configurações de Usuário: Usuários podem personalizar preferências de temas (modo escuro/claro) e gerenciar suas notificações.
+## Limitações
+O projeto se concentrará exclusivamente na catalogação de casarões e não abordará outras formas de patrimônio cultural, como eventos ou tradições.
 
-## 5. Requisitos Funcionais
+O desenvolvimento da plataforma não incluirá a implementação de programas educativos ou de engajamento comunitário, embora seja uma parte importante da preservação do patrimônio.
 
-Acesso a Casarões: Usuários podem acessar uma lista de casarões clicando no botão "Acessar". Ao clicar em um casarão específico, são redirecionados para uma página com detalhes completos.
+## Especificação Técnica
 
-Autenticação: O sistema deve permitir o login e registro de novos usuários, garantindo que cada usuário tenha suas credenciais protegidas com JWT.
+## Requisitos Funcionais (RF):
 
-Personalização de Preferências: Usuários registrados podem alterar configurações como temas (modo escuro/claro) e notificações no painel de configurações.
+Permitir o registro de informações sobre casarões históricos.
+Facilitar a visualização de casarões em um mapa interativo.
+Implementar uma funcionalidade de busca para encontrar casarões por nome ou localização.
 
-Gerenciamento de Casarões: Administradores podem adicionar, editar e remover casarões no sistema, garantindo que as informações estejam sempre atualizadas.
+## Requisitos Não-Funcionais (RNF):
 
-Visualização de Casarões: Exibição detalhada de cada casarão, com imagens e descrições históricas.
+A aplicação deve ser responsiva, funcionando bem em dispositivos móveis.
 
-Gerenciamento de Usuários: Administradores podem ativar, desativar e excluir usuários.
+A interface deve ser intuitiva e fácil de usar.
 
-Responsividade: O site deve ser responsivo, garantindo uma boa experiência tanto em dispositivos móveis quanto em desktops.
+## Stack Tecnológica
+Back-end: Node.js, pela sua flexibilidade e facilidade de desenvolvimento.
 
-## 6. Requisitos Não Funcionais
+Front-end: React, para a criação de uma interface de usuário dinâmica e responsiva.
 
-Responsividade: A interface deve ser adaptável e fluida em diversos tamanhos de tela, incluindo dispositivos móveis e desktops.
+Banco de Dados: MySQL, para o armazenamento de informações sobre os casarões.
 
-Performance: As páginas de casarões e todas as interações (como login, acesso a casarões) devem ter um tempo de resposta inferior a 2 segundos.
-
-Segurança: Todas as sessões de usuários devem ser protegidas por JWT e os dados sensíveis, como senhas, devem ser criptografados.
-
-Escalabilidade: O sistema deve ser capaz de suportar vários usuários simultâneos, tanto para visualizar os casarões quanto para realizar ações administrativas.
-
-## 7. Tecnologias Utilizadas
-
-- **Front-end:** React
-- **Back-end:** Node.js
-- **Banco de Dados:** MySQL
-- **Plataforma de Containerização:** Docker
-- **CI/CD:** Github Actions
-- **Ferramentas de Análise de Código:** SonarQube
-
-## 8. Diagrama de Casos de Uso
-
-![baixados](https://github.com/user-attachments/assets/dcf93ab0-4084-4a7e-aac9-7ba1ab4153fe)
-
-Administrador: tem acesso total, incluindo as funcionalidades de gerenciar e adicionar casarões, além do gerenciamento de usuários.
-
-Usuário: acessa a navegação pelos casarões, visualiza informações específicas e pode configurar preferências após o login.
-
-Visitante: pode apenas acessar uma demonstração limitada, sem a necessidade de login.
-
-## 9. Modelagem C4
-
-![baixados (1)](https://github.com/user-attachments/assets/d46c9fbe-007e-4d04-aa8f-b63b52ba6d1e)
-
-O Sistema Joi Patrio é o foco principal. Ele interage com três atores principais:
-
-Visitante: pode visualizar a demonstração do site (exibição limitada de casarões).
-
-Usuário Registrado: tem acesso completo ao sistema após o login, podendo acessar casarões e ajustar preferências.
-
-Administrador: gerencia o cadastro de casarões e o gerenciamento de usuários.
-
-## 10. API do Google Maps
-A API do Google Maps é uma ferramenta poderosa que permite a integração de mapas interativos em aplicações web e móveis. No contexto do projeto "Joi Patrio", essa API será utilizada para criar um mapa virtual que exibe a localização de cada casarão histórico em Joinville.
-
-**Funcionalidades principais:**
-
-**Marcação de Localizações:** Cada casarão terá um marcador no mapa, permitindo que os usuários visualizem sua localização exata.
-
-**Navegação Interativa:** Os usuários poderão interagir com o mapa, dando zoom e se movendo entre as diferentes localizações dos casarões.
-
-**Informações Detalhadas:** Ao clicar em um marcador, os usuários poderão acessar informações adicionais sobre o casarão, como fotos, descrições e histórico, melhorando a experiência de exploração.
-
-<img width="958" alt="mapavirtual" src="https://github.com/user-attachments/assets/f87ae93b-957e-4126-9810-f49ad8a15be4">
-
-## 11. Referências
-- [Lista de Imóveis Protegidos Culturalmente de Joinville](https://www.joinville.sc.gov.br/publicacoes/listas-de-imoveis-com-protecao-cultural/)
-- [Patrimônio Cultural do Paraná](https://www.patrimoniocultural.pr.gov.br/Curitiba)
-
+## Conclusão
+O projeto Joi Patrio não apenas busca registrar a rica história dos casarões de Joinville, mas também fomentar a consciência sobre a importância da preservação do patrimônio histórico. Através de uma plataforma acessível e interativa, espera-se envolver a comunidade e os visitantes, promovendo um maior apreço pela herança cultural da cidade.
