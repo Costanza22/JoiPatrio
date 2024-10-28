@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
-import { BsPersonArmsUp } from 'react-icons/bs';
+import { BsPersonArmsUp, } from 'react-icons/bs';
 import { FaSearch, FaQuestionCircle, FaWhatsapp } from 'react-icons/fa';
 import { FcAbout } from 'react-icons/fc';
 import './css/Navbar.css';
@@ -8,7 +8,12 @@ import { Link } from 'react-router-dom';
 import { FaHouseFlag } from "react-icons/fa6";
 import { IoMdNotifications } from 'react-icons/io';
 import { MdOutlineDarkMode, MdDarkMode } from 'react-icons/md';
-
+import { FaHome } from 'react-icons/fa';
+import demolida1 from '../assets/demolida1.png'; 
+import demolida2 from '../assets/demolida2.png';
+import demolida3 from '../assets/demolida3.png';
+import demolida4 from '../assets/demolida4.png';
+import recuperada1 from '../assets/recuperada1.png';
 Modal.setAppElement('#root');
 
 const Navbar = () => {
@@ -26,6 +31,7 @@ const Navbar = () => {
     const [videoVisible, setVideoVisible] = useState(false); 
     const [newComments, setNewComments] = useState(0);
     const [isDarkMode, setIsDarkMode] = useState(false);
+    const [showNaoTombados, setShowNaoTombados] = useState(false);
     
 
     const casarões = [
@@ -132,11 +138,16 @@ const Navbar = () => {
                             </ul>
                         )}
                     </li>
-                    
+                    <a href="#nao-tombados" onClick={() => setShowNaoTombados(!showNaoTombados)} className="link-nao-tombados">
+  <FaHome size={24} /> Não Tombados
+</a>
+
+
                     <li>
   <a href="#contato" onClick={() => setShowWhatsAppContainer(!showWhatsAppContainer)}>
     <FaWhatsapp size={24} /> {/* Padronize o tamanho para 24 */}
   </a>
+
 </li>
 <li>
   <a href="#questions" onClick={handleQuestionModalOpen}>
@@ -178,7 +189,55 @@ const Navbar = () => {
 
         
       </nav>
+      {showNaoTombados && (
+       <div className="imagens-nao-tombados">
+         <div className="descricao-container">
+         <h2>Casarões Não Tombados</h2>
+  <p>
+    Os casarões não tombados de Joinville são edificações que, apesar de não possuírem o status de tombamento, possuem grande valor histórico e cultural. 
+    Esses imóveis representam a rica história da cidade e sua arquitetura única, refletindo as diversas influências que moldaram Joinville ao longo dos anos. 
+    Muitos desses casarões ainda estão em uso e são parte do cotidiano da cidade, oferecendo um vislumbre da herança cultural joinvilense.
+  </p>
+  <p>
+  Eles enfrentam um risco significativo de demolição, uma vez que não possuem a proteção legal conferida pelo tombamento. 
+  <p>
+    </p>Essa vulnerabilidade pode resultar na perda irreparável de patrimônio histórico e cultural, que narra a rica história da cidade e reflete suas influências arquitetônicas. Sem a salvaguarda necessária, muitos desses imóveis estão suscetíveis a interesses comerciais e especulativos, que priorizam o desenvolvimento urbano em detrimento da preservação.
+  </p>
+</div>
 
+       <div className="imagem-container">
+         <img src={demolida1} alt="Casarão 1" className="imagem-casarão" />
+         <div className="legenda-container">
+           <p>Demolida</p>
+         </div>
+       </div>
+       <div className="imagem-container">
+         <img src={demolida2} alt="Casarão 2" className="imagem-casarão" />
+         <div className="legenda-container">
+           <p>Demolida</p>
+         </div>
+       </div>
+       <div className="imagem-container">
+         <img src={demolida3} alt="Casarão 3" className="imagem-casarão" />
+         <div className="legenda-container">
+           <p>Demolida</p>
+         </div>
+       </div>
+       <div className="imagem-container">
+         <img src={demolida4} alt="Casarão 4" className="imagem-casarão" />
+         <div className="legenda-container">
+           <p>Demolida</p>
+         </div>
+       </div>
+       <div className="imagem-container">
+         <img src={recuperada1}  alt="Casarão 5" className="imagem-casarão" />
+         <div className="legenda-container">
+           <p>Abandonada</p>
+         </div>
+       </div>
+     </div>
+      )}
+      
       {showAbout && (
         <section className="about">
           <h2><FcAbout /> Sobre Mim</h2>
@@ -190,6 +249,8 @@ const Navbar = () => {
           </p>
         </section>
       )}
+
+
 
       {showWhatsAppContainer && (
         <div className="whatsapp-container">
