@@ -47,6 +47,10 @@ A aplicação deve ser responsiva, funcionando bem em dispositivos móveis.
 
 A interface deve ser intuitiva e fácil de usar.
 
+## Diagrama de Casos de Uso
+![baixados (2)](https://github.com/user-attachments/assets/4e2f8a78-b630-45a1-ad16-0f7a4175b228)
+
+
 ## Stack Tecnológica
 Back-end: Node.js, pela sua flexibilidade e facilidade de desenvolvimento.
 
