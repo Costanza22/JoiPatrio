@@ -9,15 +9,15 @@ import { BsFillHousesFill } from "react-icons/bs";
 import { IoChatboxOutline } from "react-icons/io5";
 import { GiWindmill } from 'react-icons/gi';
 import VoiceAccessibility from './components/VoiceAccessibility';
+import { Tooltip } from 'react-tooltip';
 
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [setModalIsOpen] = useState(false);
   const [videoUrl, setVideoUrl] = useState('');
   const [videoPlaying, setVideoPlaying] = useState(false); 
   const [isChatbotOpen, setIsChatbotOpen] = useState(false);
   const [setIsLoggedIn] = useState(false); 
-  const [isChatOpen, setIsChatOpen] = useState(false);
+
   const images = [
     'https://omunicipiojoinville.com/wp-content/uploads/2023/03/palacete-doria-joinville.jpg',
     'https://facts.net/wp-content/uploads/2023/07/48-facts-about-joinville-1688694462.jpeg',
@@ -266,9 +266,12 @@ function App() {
 </article>
 
 
-<div className="voice-accessibility-icon" title="Ativar acessibilidade de voz">
+{/* Ícone de Acessibilidade de Voz */}
+<div className="voice-accessibility-icon" data-tooltip-id="voice-accessibility-tooltip">
     <VoiceAccessibility style={{ width: '20px', height: '20px' }} />
 </div>
+<Tooltip id="voice-accessibility-tooltip" place="top" content="Ativar acessibilidade de voz!" />
+
 
 
 
@@ -286,10 +289,11 @@ function App() {
       </footer>
       </main>
       
-    {/* Ícone do chat */}
-    <div className="chat-icon" onClick={toggleChatbot}>
-        <IoChatboxOutline size={30} />
-      </div>
+    {/* Chatbot Icon */}
+<div className="chat-icon" onClick={toggleChatbot} data-tooltip-id="chat-tooltip">
+    <IoChatboxOutline size={30} />
+</div>
+<Tooltip id="chat-tooltip" place="top" content="IA do Joi Patrio" />
 
       {/* Chatbot */}
       <Chatbot isOpen={isChatbotOpen} onClose={toggleChatbot} />
