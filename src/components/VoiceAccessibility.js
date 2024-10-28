@@ -1,11 +1,11 @@
-import React, { useState, useEffect, } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { BiSolidUniversalAccess } from 'react-icons/bi';
 
 const VoiceAccessibility = () => {
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isActive, setIsActive] = useState(false); 
 
-  const speak = (text) => {
+  const speak = useCallback((text) => {
     if (isSpeaking) {
       speechSynthesis.cancel(); 
       setIsSpeaking(false);
@@ -19,16 +19,16 @@ const VoiceAccessibility = () => {
     newUtterance.onend = () => {
       setIsSpeaking(false);
     };
-  };
+  }, [isSpeaking]);
 
-  const handleMouseOver = (event) => {
+  const handleMouseOver = useCallback((event) => {
     const text = event.target.innerText; 
     if (text && isActive) { 
       speak(text);
     }
-  };
+  }, [isActive, speak]);
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     if (isSpeaking) {
       speechSynthesis.cancel(); 
       setIsSpeaking(false);
@@ -38,17 +38,15 @@ const VoiceAccessibility = () => {
         speak("Ativando o leitor de voz"); 
       }
     }
-  };
+  }, [isSpeaking, isActive, speak]);
 
   useEffect(() => {
-    
     document.addEventListener('mouseover', handleMouseOver);
 
     return () => {
-      
       document.removeEventListener('mouseover', handleMouseOver);
     };
-  }, [isActive, handleMouseOver]);
+  }, [handleMouseOver]); // Dependency on handleMouseOver, which is memoized
 
   return (
     <div>
