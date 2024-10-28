@@ -50,7 +50,17 @@ A interface deve ser intuitiva e fácil de usar.
 ## Diagrama de Casos de Uso
 ![baixados (2)](https://github.com/user-attachments/assets/4e2f8a78-b630-45a1-ad16-0f7a4175b228)
 
+## Padrões de Arquitetura:
 
+## Modelos C4: 
+
+## Contexto
+
+<img src="https://github.com/user-attachments/assets/8e8bcf91-e75d-4561-9edf-2d56aebaf2d5" alt="JoiPatrio" style="border: 5px solid black; border-radius: 10px; padding: 5px;">
+
+## Container
+
+![JoiPatrio2 drawio](https://github.com/user-attachments/assets/4efd57af-2854-4ecf-ad22-91bb4ee6568f)
 ## Stack Tecnológica
 Back-end: Node.js, pela sua flexibilidade e facilidade de desenvolvimento.
 
