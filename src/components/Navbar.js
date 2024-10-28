@@ -13,7 +13,7 @@ Modal.setAppElement('#root');
 
 const Navbar = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
-    const [searchQuery, setSearchQuery] = useState('');
+    const [searchQuery] = useState('');
     const [highlightedText] = useState('');
     const [showQuestionModal, setShowQuestionModal] = useState(false);
     const [question, setQuestion] = useState('');
