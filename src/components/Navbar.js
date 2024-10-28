@@ -14,7 +14,7 @@ Modal.setAppElement('#root');
 const Navbar = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState('');
-    const [highlightedText, setHighlightedText] = useState('');
+    const [highlightedText] = useState('');
     const [showQuestionModal, setShowQuestionModal] = useState(false);
     const [question, setQuestion] = useState('');
     const [showWhatsAppContainer, setShowWhatsAppContainer] = useState(false);
@@ -22,7 +22,6 @@ const Navbar = () => {
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const [isLogin, setIsLogin] = useState(true);
     const [loginSuccess, setLoginSuccess] = useState(false);
-    const [isLoggedIn, setIsLoggedIn] = useState(false); 
     const [selectedCasarao, setSelectedCasarao] = useState(null);
     const [videoVisible, setVideoVisible] = useState(false); 
     const [newComments, setNewComments] = useState(0);
@@ -35,10 +34,6 @@ const Navbar = () => {
 
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
-    };
-
-    const handleSearchChange = (e) => {
-        setSearchQuery(e.target.value);
     };
 
     const handleSearch = () => {
@@ -162,18 +157,25 @@ const Navbar = () => {
 
           
         </ul>
-        
         <div className="search-container">
-      <span className="pulsing-text">Pesquise no site do IPHAN</span>
-      <span className="tooltip">
-        <FaSearch onClick={handleSearch} className="icon tooltip-icon" />
-        <span className="tooltip-text">Maiores informações aqui</span>
-      </span>
-    </div>
+  <div className="arrow">
+    <span>Pesquise no site do IPHAN</span>
+    <div className="arrow-shape" />
+  </div>
+  <span className="tooltip-container">
+    <FaSearch onClick={handleSearch} className="icon" />
+    <span className="tooltip">Para maiores informações!</span>
+  </span>
+</div>
+
     
-        <div className="social-icons">
-          <BsPersonArmsUp onClick={openModal} className="icon" />
-        </div>
+    <div className="social-icons">
+  <span className="tooltip-container">
+    <BsPersonArmsUp onClick={openModal} className="icon" />
+    <span className="tooltip">Faça login!</span>
+  </span>
+</div>
+
         
       </nav>
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, } from 'react';
 import { BiSolidUniversalAccess } from 'react-icons/bi';
 
 const VoiceAccessibility = () => {
@@ -48,7 +48,7 @@ const VoiceAccessibility = () => {
       
       document.removeEventListener('mouseover', handleMouseOver);
     };
-  }, [isActive]); 
+  }, [isActive, handleMouseOver]);
 
   return (
     <div>
