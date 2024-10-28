@@ -9,7 +9,8 @@ import { BsFillHousesFill } from "react-icons/bs";
 import { IoChatboxOutline } from "react-icons/io5";
 import { GiWindmill } from 'react-icons/gi';
 import VoiceAccessibility from './components/VoiceAccessibility';
-import { Tooltip } from 'react-tooltip';
+
+
 
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -270,7 +271,7 @@ function App() {
 <div className="voice-accessibility-icon" data-tooltip-id="voice-accessibility-tooltip">
     <VoiceAccessibility style={{ width: '20px', height: '20px' }} />
 </div>
-<Tooltip id="voice-accessibility-tooltip" place="top" content="Ativar acessibilidade de voz!" />
+
 
 
 
@@ -293,7 +294,7 @@ function App() {
 <div className="chat-icon" onClick={toggleChatbot} data-tooltip-id="chat-tooltip">
     <IoChatboxOutline size={30} />
 </div>
-<Tooltip id="chat-tooltip" place="top" content="IA do Joi Patrio" />
+
 
       {/* Chatbot */}
       <Chatbot isOpen={isChatbotOpen} onClose={toggleChatbot} />
