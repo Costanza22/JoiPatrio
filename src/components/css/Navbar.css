@@ -402,45 +402,29 @@ body.dark {
   
 }
 .search-container {
-  position: relative;
   display: flex;
-  align-items: center;
+  align-items: center; 
 }
 
-.arrow {
-  display: flex;
-  align-items: center;
-  position: relative;
+.pulsing-text {
   margin-right: 10px; 
-  background-color: burlywood;
-  padding: 5px 10px;
-  border-radius: 5px;
-  animation: blink 1s infinite; 
-}
-
-.arrow-shape {
-  width: 0;
-  height: 0;
-  border-left: 10px solid burlywood; 
-  border-top: 5px solid transparent; 
-  border-bottom: 5px solid transparent; 
-  margin-left: 5px; 
-}
-
-.icon {
-  font-size: 24px; 
-  cursor: pointer;
 }
 
 .tooltip {
   position: relative; 
+  display: inline-block; 
+}
+
+.tooltip-icon {
   cursor: pointer; 
+  font-size: 24px; 
+  color: #000; 
 }
 
 .tooltip-text {
   visibility: hidden; 
-  width: 150px; 
-  background-color: black; 
+  width: 120px; 
+  background-color: black;
   color: #fff; 
   text-align: center; 
   border-radius: 5px; 
@@ -449,21 +433,161 @@ body.dark {
   z-index: 1; 
   bottom: 125%; 
   left: 50%; 
-  margin-left: -75px; 
+  margin-left: -60px; 
   opacity: 0; 
   transition: opacity 0.3s; 
 }
 
 .tooltip:hover .tooltip-text {
   visibility: visible; 
-  opacity: 1;
+  opacity: 1; 
+}
+.tooltip-container {
+  position: relative;
+  display: inline-block; 
 }
 
-@keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
-  }
+.tooltip {
+  visibility: hidden;
+  width: auto; 
+  min-width: 120px; 
+  background-color: black; 
+  color: #fff; 
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; 
+  left: 50%;
+  transform: translateX(-50%); 
+  opacity: 0; 
+  transition: opacity 0.3s; 
+  white-space: nowrap; 
 }
+
+.tooltip-container:hover .tooltip {
+  visibility: visible; 
+  opacity: 1; 
+}
+.tooltip-container {
+  position: relative;
+  display: inline-block; 
+}
+
+.tooltip {
+  visibility: hidden;
+  width: auto; 
+  min-width: 150px; 
+  background-color: black; 
+  color: #fff; 
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; 
+  left: 50%;
+  transform: translateX(-50%); 
+  opacity: 0; 
+  transition: opacity 0.3s; 
+  white-space: nowrap; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+.tooltip-container:hover .tooltip {
+  visibility: visible; 
+  opacity: 1;
+}
+.nao-tombados-container {
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.nao-tombados-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.casaroes-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.casarao-item {
+  width: 200px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.casarao-imagem {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.link-nao-tombados {
+  display: flex; 
+  align-items: center; 
+  color: white !important; 
+  text-decoration: none; 
+}
+
+.link-nao-tombados svg {
+  fill: white !important; 
+  margin-right: 8px; 
+}
+.imagens-nao-tombados {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center; 
+  gap: 10px;
+}
+
+.imagem-container {
+  text-align: center; 
+}
+
+.imagem-casarão {
+  width: 350px; 
+  height: auto; 
+  border: 2px solid #ccc;
+  border-radius: 5px; 
+}
+
+.legenda-container {
+  margin-top: 5px; 
+  padding: 5px; 
+  background-color: rgba(255, 255, 255, 0.8); 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  display: inline-block; 
+}
+.descricao-container {
+  border: 2px solid #ccc; 
+  border-radius: 5px; 
+  padding: 15px; 
+  background-color: rgba(255, 255, 255, 0.9); 
+  max-width: 800px;
+  margin: 20px auto; 
+}
+
+.descricao-container h2 {
+  margin-bottom: 10px; 
+  font-size: 24px; 
+  color: #333; 
+}
+
+.descricao-container p {
+  margin: 0; 
+  font-size: 16px; 
+  line-height: 1.5; 
+}
+
