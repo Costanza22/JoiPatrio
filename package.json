@@ -67,6 +67,6 @@
     "testEnvironment": "jsdom"
   },
   "engines": {
-    "node": "16.x"  
+    "node": "19.x"  
   }
 }
