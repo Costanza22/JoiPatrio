@@ -9,8 +9,7 @@ import { BsFillHousesFill } from "react-icons/bs";
 import { IoChatboxOutline } from "react-icons/io5";
 import { GiWindmill } from 'react-icons/gi';
 import VoiceAccessibility from './components/VoiceAccessibility';
-
-
+import { BsFillCursorFill } from "react-icons/bs";
 
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -82,7 +81,7 @@ function App() {
     <div className="button-container">
       <a href="index.html" target="_blank" rel="noopener noreferrer">
       <button className="styled-button" 
-  onClick={() => window.location.href = 'https://patrim-nio-hist-rico-de-joinville.vercel.app/'}>
+  onClick={() => window.location.href = ''}>
   <strong>Acesse!</strong>
 </button>
 
@@ -90,7 +89,17 @@ function App() {
     </div>
   </header>
 </div>
-
+  {/* Ícone abaixo do botão, que redireciona ao clicar */}
+  <a
+        href="https://patrim-nio-hist-rico-de-joinville.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '8px', textDecoration: 'none', color: 'inherit' }}
+      >
+        
+        <BsFillCursorFill size={24} /> {/* Tamanho do ícone */}
+        <strong style={{ marginTop: '4px' }}>Saiba Mais</strong>
+      </a>
       <main>
         <section className="posts">
           <div className="title-container">
@@ -265,7 +274,6 @@ function App() {
       <CasaPreservacaoChart />
     </p>
 </article>
-
 
 {/* Ícone de Acessibilidade de Voz */}
 <div className="voice-accessibility-icon" data-tooltip-id="voice-accessibility-tooltip">
