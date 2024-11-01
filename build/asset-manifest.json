@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5b1fe390.css",
+    "main.js": "/static/js/main.26224128.js",
+    "static/media/demolida1.png": "/static/media/demolida1.6d5a3858ce3785de5680.png",
+    "static/media/demolida3.png": "/static/media/demolida3.f9a7f0ab51f9470153e6.png",
+    "static/media/demolida4.png": "/static/media/demolida4.25a4fa2160f5685cf19e.png",
+    "static/media/demolida2.png": "/static/media/demolida2.7f9d50075cc0bf96fe3a.png",
+    "static/media/recuperada1.png": "/static/media/recuperada1.d1f51aa0165a0b7d51f2.png",
+    "index.html": "/index.html",
+    "main.5b1fe390.css.map": "/static/css/main.5b1fe390.css.map",
+    "main.26224128.js.map": "/static/js/main.26224128.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5b1fe390.css",
+    "static/js/main.26224128.js"
+  ]
+}
