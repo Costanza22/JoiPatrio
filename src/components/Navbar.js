@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
-import { BsPersonArmsUp, } from 'react-icons/bs';
-import { FaSearch, FaQuestionCircle, FaWhatsapp } from 'react-icons/fa';
+import { FaSearch, FaQuestionCircle, FaWhatsapp,FaHome } from 'react-icons/fa';
 import { FcAbout } from 'react-icons/fc';
 import './css/Navbar.css';
 import { Link } from 'react-router-dom';
 import { FaHouseFlag } from "react-icons/fa6";
 import { IoMdNotifications } from 'react-icons/io';
+import { IoDocumentOutline } from "react-icons/io5";
 import { MdOutlineDarkMode, MdDarkMode } from 'react-icons/md';
-import { FaHome } from 'react-icons/fa';
 import demolida1 from '../assets/demolida1.png'; 
 import demolida2 from '../assets/demolida2.png';
 import demolida3 from '../assets/demolida3.png';
@@ -32,21 +31,34 @@ const Navbar = () => {
     const [newComments, setNewComments] = useState(0);
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [showNaoTombados, setShowNaoTombados] = useState(false);
-    
+    const [userType, setUserType] = useState(''); 
+    const [username, setUsername] = useState(''); 
+    const [password, setPassword] = useState(''); 
+    const [name, setName] = useState(''); 
+    const [email, setEmail] = useState('')
 
     const casarões = [
-        'Palacete Niemeyer',
+        
     ];
 
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
     };
+    
 
     const handleSearch = () => {
-      const baseURL = 'https://www.iphan.gov.br/'; // URL do IPHAN
-      window.open(`${baseURL}?q=${searchQuery}`, '_blank'); // Redireciona para o site do IPHAN em uma nova aba
+      const baseURL = 'https://www.iphan.gov.br/'; 
+      window.open(`${baseURL}?q=${searchQuery}`, '_blank'); 
     };
 
+    const handleCadastrarCasarao = () => {
+     
+    };
+  
+    const handleConsultarCasaroes = () => {
+     
+    };
+    
     const highlightText = (text, query) => {
         if (!query) return text;
         const parts = text.split(new RegExp(`(${query})`, 'gi'));
@@ -67,34 +79,83 @@ const Navbar = () => {
         setNewComments(0); 
     };
 
+    
     const toggleTheme = () => {
         setIsDarkMode(prevMode => !prevMode);
     };
 
-    const handleSubmitQuestion = (e) => {
-        e.preventDefault();
-        console.log('Pergunta/Sugestão:', question);
-        setQuestion('');
-        setNewComments(prevCount => prevCount + 1); 
-        handleQuestionModalClose();
-    };
+  
+const handleSubmitQuestion = (e) => {
+  e.preventDefault();
+  console.log('Pergunta/Sugestão:', question);
+  setQuestion(''); 
+  setNewComments(prevCount => prevCount + 1); 
+  handleQuestionModalClose(); 
+};
 
-    const openModal = () => setModalIsOpen(true);
-    const closeModal = () => setModalIsOpen(false);
+
+const handleSignupSubmit = (event) => {
+  event.preventDefault(); 
+
+  
+  const formData = new FormData(event.target);
+  const userType = formData.get("userType");
+  const name = formData.get("name");
+  const email = formData.get("email");
+  const password = formData.get("password");
+
+  
+  console.log("Tipo de Usuário:", userType);
+  console.log("Nome:", name);
+  console.log("Email:", email);
+  console.log("Senha:", password);
+
+  
+  
+  closeModal(); 
+};
+
+
+const openModal = () => {
+  setModalIsOpen(true);
+  setUserType(''); 
+  setUsername(''); 
+  setPassword(''); 
+  setName(''); 
+  setEmail(''); 
+};
+
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
 
     const toggleLogin = () => setIsLogin(!isLogin);
 
-    const handleLoginSubmit = (event) => {
-      event.preventDefault();
-      setLoginSuccess(true);
-      closeModal();
-    };
+   
   
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    if (userType === 'adm' && isLogin) {
+  
+      setLoginSuccess(true);
+    } else if (userType === 'visitante' && isLogin) {
+      
+      setLoginSuccess(true);
+    } else if (!isLogin) {
+     
+      alert('Cadastro realizado com sucesso!');
+      toggleLogin();
+    }
+    closeModal();
+  };
+
 
     const handleCasaraoClick = (casarao) => {
         setSelectedCasarao(selectedCasarao === casarao ? null : casarao);
         setVideoVisible(false); 
     };
+    
 
     const handleImageClick = () => {
         setVideoVisible(true); 
@@ -103,9 +164,33 @@ const Navbar = () => {
     const closeVideo = () => setVideoVisible(false); 
 
     useEffect(() => {
-        document.body.className = isDarkMode ? 'dark' : 'light';
+      document.body.classList.remove('dark', 'light');
+      document.body.classList.add(isDarkMode ? 'dark' : 'light');
     }, [isDarkMode]);
-
+    useEffect(() => {
+      if (loginSuccess) {
+        setTimeout(() => {
+          setModalIsOpen(false); 
+        }, 1500);
+      }
+    }, [loginSuccess]);
+    useEffect(() => {
+      console.log("Login success status:", loginSuccess);
+      if (loginSuccess) {
+        setTimeout(() => {
+          setModalIsOpen(false);
+        }, 1500);
+      }
+    }, [loginSuccess]);
+        
+    
+    const handleDownloadPDF = () => {
+      
+      const link = document.createElement('a');
+      link.href = '/Edital Joi Patrio.pdf';
+      link.download = 'edital_joi_patrio.pdf';
+      link.click();
+    };
     return (
         <>
             <div className="navbar-header">
@@ -119,12 +204,12 @@ const Navbar = () => {
             </div>
 
             <nav className="navbar">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about" onClick={() => setShowAbout(!showAbout)}>Sobre</a></li>
-                    <li>
+  <ul className="navbar-menu">
+    {/* Links principais */}
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about" onClick={() => setShowAbout(!showAbout)}>Sobre</a></li>
                         <a href="#casaroes" onClick={toggleDropdown}>
-                            Pré-Demonstração
+                           
                         </a>
                         {dropdownOpen && (
                             <ul className="dropdown-menu">
@@ -137,57 +222,72 @@ const Navbar = () => {
                                 ))}
                             </ul>
                         )}
-                    </li>
-                    <a href="#nao-tombados" onClick={() => setShowNaoTombados(!showNaoTombados)} className="link-nao-tombados">
-  <FaHome size={24} /> Não Tombados
-</a>
+                        
+                     {/* Condicional para exibir Casarões com base no tipo de usuário */}
+        {loginSuccess && userType && (
+          <li className="submenu">
+            <a href="#casaroes" onClick={toggleDropdown}>Casarões</a>
+            {dropdownOpen && (
+              <ul className="dropdown-menu">
+                {userType === 'adm' && (
+                  <li><Link to="#cadastrar" onClick={handleCadastrarCasarao}>Cadastrar Casarão</Link></li>
+                )}
+                <li><Link to="#consultar" onClick={handleConsultarCasaroes}>Consultar Casarões</Link></li>
+              </ul>
+            )}
+          </li>
+        )}
 
+                   {/* Ícones com ações específicas */}
+    <li>
+      <a href="#nao-tombados" onClick={() => setShowNaoTombados(!showNaoTombados)} className="link-nao-tombados">
+        <FaHome size={24} /> Não Tombados
+      </a>
+    </li>
+    <li>
+    <a href="#contato" onClick={() => setShowWhatsAppContainer(!showWhatsAppContainer)}>
+        <FaWhatsapp size={24} />
+      </a>
+    </li>
+    <li>
+      <a href="#questions" onClick={handleQuestionModalOpen}>
+        <FaQuestionCircle size={24} />
+      </a>
+    </li>
+    <li>
+      <a href="#notifications" onClick={handleNotificationClick}>
+        <IoMdNotifications size={24} />
+        {newComments > 0 && <span className="notification-badge">{newComments}</span>}
+      </a>
+    </li>
+    
+    {/* Botão de tema */}
+    <li>
+      <button onClick={toggleTheme} className="theme-toggle">
+        {isDarkMode ? <MdDarkMode size={24} /> : <MdOutlineDarkMode size={24} />}
+      </button>
+</li>
 
-                    <li>
-  <a href="#contato" onClick={() => setShowWhatsAppContainer(!showWhatsAppContainer)}>
-    <FaWhatsapp size={24} /> {/* Padronize o tamanho para 24 */}
-  </a>
-
-</li>
-<li>
-  <a href="#questions" onClick={handleQuestionModalOpen}>
-    <FaQuestionCircle size={24} /> {/* Mesmo tamanho */}
-  </a>
-</li>
-<li>
-  <a href="#notifications" onClick={handleNotificationClick}>
-    <IoMdNotifications size={24} /> {/* Mesmo tamanho */}
-    {newComments > 0 && <span className="notification-badge">{newComments}</span>}
-  </a>
-</li>
-<li>
-  <button onClick={toggleTheme} style={{ background: 'none', border: 'none', cursor: 'pointer', color: isDarkMode ? '#fff' : '#000' }}>
-    {isDarkMode ? <MdDarkMode size={24} /> : <MdOutlineDarkMode size={24} />} {/* Mesmo tamanho */}
-  </button>
-</li>
-
-          
+  
         </ul>
         <div className="search-container">
   <div className="arrow">
     <span>Pesquise no site do IPHAN</span>
     <div className="arrow-shape" />
   </div>
+
+
   <span className="tooltip-container">
     <FaSearch onClick={handleSearch} className="icon" />
     <span className="tooltip">Para maiores informações!</span>
   </span>
 </div>
 
-    
-    <div className="social-icons">
-  <span className="tooltip-container">
-    <BsPersonArmsUp onClick={openModal} className="icon" />
-    <span className="tooltip">Faça login!</span>
-  </span>
-</div>
-
-        
+    <span className="tooltip-container">
+      <IoDocumentOutline onClick={handleDownloadPDF} className="icon" />
+      <span className="tooltip">Acesse o edital!</span>
+    </span>
+  
       </nav>
       {showNaoTombados && (
        <div className="imagens-nao-tombados">
@@ -252,7 +352,7 @@ const Navbar = () => {
 
 
 
-      {showWhatsAppContainer && (
+{showWhatsAppContainer && (
         <div className="whatsapp-container">
           <p>Contate-me no WhatsApp:</p>
           <a
@@ -330,61 +430,8 @@ const Navbar = () => {
         </div>
       )}
 
-      {/* Modal de Login/Cadastro */}
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        contentLabel="Modal de Login/Cadastro"
-        className="modal"
-        overlayClassName="modal-overlay"
-      >
-        <button onClick={closeModal} className="close-button">X</button>
-
-        {loginSuccess ? ( // Se login for bem-sucedido, exibe a mensagem
-          <div className="success-message">
-            <h2>Login efetuado com sucesso!</h2>
-          </div>
-        ) : (
-          isLogin ? (
-            <div className="modal-content">
-              <h2>Login</h2>
-              <form onSubmit={handleLoginSubmit}>
-                <label>
-                  Usuário:
-                  <input type="text" name="username" required />
-                </label>
-                <label>
-                  Senha:
-                  <input type="password" name="password" required />
-                </label>
-                <button type="submit">Entrar</button>
-              </form>
-              <p onClick={toggleLogin}>Não tem uma conta? Cadastre-se</p>
-            </div>
-          ) : (
-            <div className="modal-content">
-              <h2>Cadastro</h2>
-              <form>
-                <label>
-                  Nome:
-                  <input type="text" name="name" required />
-                </label>
-                <label>
-                  Email:
-                  <input type="email" name="email" required />
-                </label>
-                <label>
-                  Senha:
-                  <input type="password" name="password" required />
-                </label>
-                <button type="submit">Cadastrar</button>
-              </form>
-              <p onClick={toggleLogin}>Já tem uma conta? Faça login</p>
-            </div>
-          )
-        )}
-      </Modal>
-
+   
+    
       {/* Modal de Perguntas/Sugestões */}
       <Modal
         isOpen={showQuestionModal}
