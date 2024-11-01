@@ -35,17 +35,31 @@ O desenvolvimento da plataforma não incluirá a implementação de programas ed
 
 ## Especificação Técnica
 
-## Requisitos Funcionais (RF):
+## Requisitos Funcionais (RF)
 
-Permitir o registro de informações sobre casarões históricos.
-Facilitar a visualização de casarões em um mapa interativo.
-Implementar uma funcionalidade de busca para encontrar casarões por nome ou localização.
+| **Requisito**                                                                                          |
+|-------------------------------------------------------------------------------------------------------|
+| 1. Permitir o registro de informações sobre casarões históricos.                                       |
+| 2. Facilitar a visualização de casarões em um mapa interativo.                                        |
+| 3. Implementar uma funcionalidade de busca para encontrar casarões por nome ou localização.           |
+| 4. Implementar sistema de login para administradores e visitantes.                                    |
+| 5. Permitir que os usuários marquem casarões como favoritos.                                          |
+| 6. Exibir uma lista de sugestões de casarões ao digitar na barra de pesquisa.                        |
+| 7. Criar páginas dedicadas para cada casarão com informações detalhadas.                             |
+| 8. Implementar uma seção de blog sobre patrimônio histórico.                                          |
+| 9. Permitir que os administradores adicionem, editem ou removam informações sobre casarões.           |
+| 10. Implementar um sistema de comentários ou feedback para os visitantes.                             |
+| 11. Oferecer a opção de alternar entre modos de exibição (ex: modo escuro e claro).                  |
 
-## Requisitos Não-Funcionais (RNF):
+## Requisitos Não-Funcionais (RNF)
 
-A aplicação deve ser responsiva, funcionando bem em dispositivos móveis.
-
-A interface deve ser intuitiva e fácil de usar.
+| **Requisito**                                                                                          |
+|-------------------------------------------------------------------------------------------------------|
+| 1. A aplicação deve ser responsiva, funcionando bem em dispositivos móveis.                           |
+| 2. A interface deve ser intuitiva e fácil de usar.                                                   |
+| 3. A aplicação deve ter um tempo de resposta rápido para buscas e carregamento de informações.        |
+| 4. Garantir a segurança das informações dos usuários, especialmente no login e no cadastro.          |
+| 5. Acessibilidade para usuários com deficiência, garantindo que todos os elementos possam ser utilizados. |
 
 ## Diagrama de Casos de Uso
 ![baixados (2)](https://github.com/user-attachments/assets/4e2f8a78-b630-45a1-ad16-0f7a4175b228)
