@@ -23,20 +23,14 @@ const Navbar = () => {
     const [question, setQuestion] = useState('');
     const [showWhatsAppContainer, setShowWhatsAppContainer] = useState(false);
     const [showAbout, setShowAbout] = useState(false);
-    const [modalIsOpen, setModalIsOpen] = useState(false);
-    const [isLogin, setIsLogin] = useState(true);
     const [loginSuccess, setLoginSuccess] = useState(false);
     const [selectedCasarao, setSelectedCasarao] = useState(null);
     const [videoVisible, setVideoVisible] = useState(false); 
     const [newComments, setNewComments] = useState(0);
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [showNaoTombados, setShowNaoTombados] = useState(false);
-    const [userType, setUserType] = useState(''); 
-    const [username, setUsername] = useState(''); 
-    const [password, setPassword] = useState(''); 
-    const [name, setName] = useState(''); 
-    const [email, setEmail] = useState('')
-
+    
+    
     const casarões = [
         
     ];
@@ -93,64 +87,6 @@ const handleSubmitQuestion = (e) => {
   handleQuestionModalClose(); 
 };
 
-
-const handleSignupSubmit = (event) => {
-  event.preventDefault(); 
-
-  
-  const formData = new FormData(event.target);
-  const userType = formData.get("userType");
-  const name = formData.get("name");
-  const email = formData.get("email");
-  const password = formData.get("password");
-
-  
-  console.log("Tipo de Usuário:", userType);
-  console.log("Nome:", name);
-  console.log("Email:", email);
-  console.log("Senha:", password);
-
-  
-  
-  closeModal(); 
-};
-
-
-const openModal = () => {
-  setModalIsOpen(true);
-  setUserType(''); 
-  setUsername(''); 
-  setPassword(''); 
-  setName(''); 
-  setEmail(''); 
-};
-
-
-  const closeModal = () => {
-    setModalIsOpen(false);
-  };
-
-    const toggleLogin = () => setIsLogin(!isLogin);
-
-   
-  
-  const handleLoginSubmit = (e) => {
-    e.preventDefault();
-    if (userType === 'adm' && isLogin) {
-  
-      setLoginSuccess(true);
-    } else if (userType === 'visitante' && isLogin) {
-      
-      setLoginSuccess(true);
-    } else if (!isLogin) {
-     
-      alert('Cadastro realizado com sucesso!');
-      toggleLogin();
-    }
-    closeModal();
-  };
-
-
     const handleCasaraoClick = (casarao) => {
         setSelectedCasarao(selectedCasarao === casarao ? null : casarao);
         setVideoVisible(false); 
@@ -167,23 +103,7 @@ const openModal = () => {
       document.body.classList.remove('dark', 'light');
       document.body.classList.add(isDarkMode ? 'dark' : 'light');
     }, [isDarkMode]);
-    useEffect(() => {
-      if (loginSuccess) {
-        setTimeout(() => {
-          setModalIsOpen(false); 
-        }, 1500);
-      }
-    }, [loginSuccess]);
-    useEffect(() => {
-      console.log("Login success status:", loginSuccess);
-      if (loginSuccess) {
-        setTimeout(() => {
-          setModalIsOpen(false);
-        }, 1500);
-      }
-    }, [loginSuccess]);
-        
-    
+
     const handleDownloadPDF = () => {
       
       const link = document.createElement('a');
@@ -223,21 +143,7 @@ const openModal = () => {
                             </ul>
                         )}
                         
-                     {/* Condicional para exibir Casarões com base no tipo de usuário */}
-        {loginSuccess && userType && (
-          <li className="submenu">
-            <a href="#casaroes" onClick={toggleDropdown}>Casarões</a>
-            {dropdownOpen && (
-              <ul className="dropdown-menu">
-                {userType === 'adm' && (
-                  <li><Link to="#cadastrar" onClick={handleCadastrarCasarao}>Cadastrar Casarão</Link></li>
-                )}
-                <li><Link to="#consultar" onClick={handleConsultarCasaroes}>Consultar Casarões</Link></li>
-              </ul>
-            )}
-          </li>
-        )}
-
+                     
                    {/* Ícones com ações específicas */}
     <li>
       <a href="#nao-tombados" onClick={() => setShowNaoTombados(!showNaoTombados)} className="link-nao-tombados">
