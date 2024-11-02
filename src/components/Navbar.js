@@ -23,7 +23,6 @@ const Navbar = () => {
     const [question, setQuestion] = useState('');
     const [showWhatsAppContainer, setShowWhatsAppContainer] = useState(false);
     const [showAbout, setShowAbout] = useState(false);
-    const [loginSuccess, setLoginSuccess] = useState(false);
     const [selectedCasarao, setSelectedCasarao] = useState(null);
     const [videoVisible, setVideoVisible] = useState(false); 
     const [newComments, setNewComments] = useState(0);
@@ -45,14 +44,8 @@ const Navbar = () => {
       window.open(`${baseURL}?q=${searchQuery}`, '_blank'); 
     };
 
-    const handleCadastrarCasarao = () => {
-     
-    };
   
-    const handleConsultarCasaroes = () => {
-     
-    };
-    
+  
     const highlightText = (text, query) => {
         if (!query) return text;
         const parts = text.split(new RegExp(`(${query})`, 'gi'));
