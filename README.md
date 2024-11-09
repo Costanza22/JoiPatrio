@@ -46,8 +46,8 @@ O desenvolvimento da plataforma não incluirá a implementação de programas ed
 | 5. Permitir que os administradores adicionem, editem ou removam informações e imagens sobre casarões.                                   |
 | 6. Implementar um sistema de comentários ou feedback, permitindo que visitantes compartilhem opiniões sobre cada casarão.                      |          |
 | 7. Implementar uma seção de blog sobre patrimônio histórico.                                          |
-          |
-                |
+          
+                
 
 ## Requisitos Não-Funcionais (RNF)
 
