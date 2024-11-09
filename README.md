@@ -39,17 +39,15 @@ O desenvolvimento da plataforma não incluirá a implementação de programas ed
 
 | **Requisito**                                                                                          |
 |-------------------------------------------------------------------------------------------------------|
-| 1. Permitir o registro de informações sobre casarões históricos.                                       |
-| 2. Facilitar a visualização de casarões em um mapa interativo.                                        |
-| 3. Implementar uma funcionalidade de busca para encontrar casarões por nome ou localização.           |
+| 1. Permitir o registro de informações detalhadas sobre casarões históricos, incluindo fotos e localização.                                    |
+| 2. Implementar um sistema de autenticação com login para administradores e visitantes.                                       |
+  3.Permitir que os usuários marquem casarões como favoritos para acesso rápido posterior.         |
 | 4. Implementar sistema de login para administradores e visitantes.                                    |
-| 5. Permitir que os usuários marquem casarões como favoritos.                                          |
-| 6. Exibir uma lista de sugestões de casarões ao digitar na barra de pesquisa.                        |
-| 7. Criar páginas dedicadas para cada casarão com informações detalhadas.                             |
-| 8. Implementar uma seção de blog sobre patrimônio histórico.                                          |
-| 9. Permitir que os administradores adicionem, editem ou removam informações sobre casarões.           |
-| 10. Implementar um sistema de comentários ou feedback para os visitantes.                             |
-| 11. Oferecer a opção de alternar entre modos de exibição (ex: modo escuro e claro).                  |
+| 5. Permitir que os administradores adicionem, editem ou removam informações e imagens sobre casarões.                                   |
+| 6. Implementar um sistema de comentários ou feedback, permitindo que visitantes compartilhem opiniões sobre cada casarão.                      |          |
+| 7. Implementar uma seção de blog sobre patrimônio histórico.                                          |
+          |
+                |
 
 ## Requisitos Não-Funcionais (RNF)
 
@@ -61,20 +59,39 @@ O desenvolvimento da plataforma não incluirá a implementação de programas ed
 | 4. Garantir a segurança das informações dos usuários, especialmente no login e no cadastro.          |
 | 5. Acessibilidade para usuários com deficiência, garantindo que todos os elementos possam ser utilizados. |
 
-## Diagrama de Casos de Uso
-![baixados (2)](https://github.com/user-attachments/assets/4e2f8a78-b630-45a1-ad16-0f7a4175b228)
+## Casos de Uso
+
+O diagrama abaixo representa os principais casos de uso do sistema *Joi Patrio* e como os usuários (Visitante e Administrador) interagem com o sistema:
+
+- **Visitante**: Pode fazer login, marcar casarões como favoritos, deixar comentários, e visualizar o blog.
+- **Administrador**: Pode registrar novos casarões, gerenciar informações e editar os dados dos casarões.
+
+![diagrama 4](https://github.com/user-attachments/assets/711ce6b0-e403-4c9c-b9ba-52ed49295ae8)
+
+
+## Casos de Uso (CU) com os Atores
+
+| **Caso de Uso**                          | **Descrição**                                                                                                     | **Atores Envolvidos**      |
+|------------------------------------------|-------------------------------------------------------------------------------------------------------------------|-----------------------------|
+| **CU01**: Registrar casarões históricos   | Permite registrar informações detalhadas sobre casarões históricos, incluindo fotos e localização.                | Administrador               |
+| **CU02**: Autenticação de Usuário         | Implementa o login e autenticação para permitir acesso de visitantes e administradores.                          | Visitante, Administrador    |
+| **CU03**: Marcar Favoritos                | Permite aos usuários marcar casarões como favoritos para acesso rápido.                                          | Visitante                   |
+| **CU04**: Gerenciar Informações de Casarões | Permite ao administrador adicionar, editar ou remover informações e imagens de casarões históricos.              | Administrador               |
+| **CU05**: Comentários e Feedback          | Permite que os visitantes compartilhem suas opiniões sobre cada casarão.                                         | Visitante                   |
+| **CU06**: Visualizar Blog                 | Visitantes podem acessar a seção de blog sobre patrimônio histórico e ler publicações.                           | Visitante, Administrador    |
+
 
 ## Padrões de Arquitetura:
 
 ## Modelos C4: 
 
-## Contexto
+## 1. Diagrama de Contexto (Nível 1) - Modelo C4
 
-<img src="https://github.com/user-attachments/assets/8e8bcf91-e75d-4561-9edf-2d56aebaf2d5" alt="JoiPatrio" style="border: 5px solid black; border-radius: 10px; padding: 5px;">
+![mermaid-diagram-2024-11-09-185808](https://github.com/user-attachments/assets/946a8427-5c32-41e1-9e08-ad494d62c8de)
 
-## Container
+## 2. Diagrama de Containers (Nível 2) - Modelo C4
+![mermaid-diagram-2024-11-09-185733](https://github.com/user-attachments/assets/b6b70455-16a4-4e5f-86fe-c82921a60ac8)
 
-![JoiPatrio2 drawio](https://github.com/user-attachments/assets/4efd57af-2854-4ecf-ad22-91bb4ee6568f)
 ## Stack Tecnológica
 Back-end: Node.js, pela sua flexibilidade e facilidade de desenvolvimento.
 
