@@ -92,6 +92,9 @@ O diagrama abaixo representa os principais casos de uso do sistema *Joi Patrio* 
 ## 2. Diagrama de Containers (Nível 2) - Modelo C4
 ![mermaid-diagram-2024-11-09-185733](https://github.com/user-attachments/assets/b6b70455-16a4-4e5f-86fe-c82921a60ac8)
 
+## Trello
+https://trello.com/b/tn4lqws7/joipatrio
+
 ## Stack Tecnológica
 Back-end: Node.js, pela sua flexibilidade e facilidade de desenvolvimento.
 
