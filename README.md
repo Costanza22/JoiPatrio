@@ -102,7 +102,26 @@ Front-end: React, para a criação de uma interface de usuário dinâmica e resp
 
 Banco de Dados: MySQL, para o armazenamento de informações sobre os casarões.
 
-Ferramenta de Análise de código : SonarQube
+## Aplicação do Método KISS no Joi Patrio
+O projeto Joi Patrio foi desenvolvido com base no método KISS (Keep It Simple, Stupid), priorizando a simplicidade no design e na implementação para garantir eficiência e fácil compreensão.
+
+Como Foi Aplicado?
+
+Design Intuitivo: Interface limpa e direta, com foco em imagens e informações essenciais sobre os casarões históricos.
+
+Código Enxuto: Componentes reutilizáveis em React e dependências limitadas às essenciais, como react-icons e react-router-dom.
+
+Funcionalidades Prioritárias: Busca com sugestões, login simplificado e acesso rápido aos casarões atendem o objetivo principal.
+
+## Benefícios
+Manutenção Facilitada: Código organizado e de fácil evolução.
+
+Experiência do Usuário: Navegação clara e intuitiva.
+
+Crescimento Gradual: Base simples que permite expansão futura sem comprometer o projeto inicial.
+
+
+## Ferramenta de Análise de código : SonarQube
 
 ## Conclusão
 O projeto Joi Patrio não apenas busca registrar a rica história dos casarões de Joinville, mas também fomentar a consciência sobre a importância da preservação do patrimônio histórico. Através de uma plataforma acessível e interativa, espera-se envolver a comunidade e os visitantes, promovendo um maior apreço pela herança cultural da cidade.
