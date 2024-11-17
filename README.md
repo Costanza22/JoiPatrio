@@ -102,6 +102,15 @@ Front-end: React, para a criação de uma interface de usuário dinâmica e resp
 
 Banco de Dados: MySQL, para o armazenamento de informações sobre os casarões.
 
+## Projeto
+O Projeto foi separado em dois repositórios
+
+A página principal é esse e a parte de login é esse 
+
+https://github.com/Costanza22/joinville-version
+
+Para melhor organização!
+
 ## Aplicação do Método KISS no Joi Patrio
 O projeto Joi Patrio foi desenvolvido com base no método KISS (Keep It Simple, Stupid), priorizando a simplicidade no design e na implementação para garantir eficiência e fácil compreensão.
 
