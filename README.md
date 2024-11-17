@@ -120,6 +120,48 @@ Experiência do Usuário: Navegação clara e intuitiva.
 
 Crescimento Gradual: Base simples que permite expansão futura sem comprometer o projeto inicial.
 
+## Aplicação do Docker no Joi Patrio
+Este projeto utiliza o Docker para garantir ambientes consistentes para o frontend, backend e o banco de dados MySQL, facilitando o desenvolvimento, testes e a implantação. O Docker permite que a aplicação seja executada de forma isolada e portável, sem a necessidade de configurações complexas no ambiente local.
+
+## Estrutura dos Contêineres
+
+Frontend (React): Executado em um contêiner e acessível através de http://localhost:4000.
+
+Backend (Node.js): Executado em outro contêiner, acessível via http://localhost:5001.
+
+Banco de Dados (MySQL): Contêiner isolado, acessível através de http://localhost:5000.
+
+## Instruções para Rodar o Projeto
+
+Clonar o repositório:
+
+git clone https://github.com/Costanza22/joinville-version
+
+cd joinville-version
+
+Construir e rodar os contêineres com Docker Compose:
+
+docker-compose up --build
+
+## Acessar a aplicação
+Frontend: http://localhost:4000
+
+Backend: http://localhost:5001
+
+Banco de Dados: Acessível na porta 5000 (para conexão com o backend).
+
+## Como Funciona
+O frontend é um aplicativo React servido por Nginx.
+
+O backend é uma API Node.js que interage com o banco de dados MySQL.
+
+O MySQL armazena os dados sobre os casarões históricos de Joinville.
+
+## Vantagens
+Ambientes consistentes: Todos os serviços (frontend, backend e banco de dados) são configurados de forma independente, mas interagem entre si dentro da mesma rede Docker.
+
+Facilidade de configuração: O projeto pode ser iniciado com um único comando, sem a necessidade de instalação manual de dependências.
+
 
 ## Ferramenta de Análise de código : SonarQube
 
