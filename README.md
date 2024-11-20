@@ -173,6 +173,7 @@ Facilidade de configuração: O projeto pode ser iniciado com um único comando,
 
 
 ## Ferramenta de Análise de código : SonarQube
+https://sonarcloud.io/summary/new_code?id=Costanza22_joinville-version
 
 ## Conclusão
 O projeto Joi Patrio não apenas busca registrar a rica história dos casarões de Joinville, mas também fomentar a consciência sobre a importância da preservação do patrimônio histórico. Através de uma plataforma acessível e interativa, espera-se envolver a comunidade e os visitantes, promovendo um maior apreço pela herança cultural da cidade.
