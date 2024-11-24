@@ -160,6 +160,36 @@ Backend: http://localhost:5001
 Banco de Dados: Acessível na porta 5000 (para conexão com o backend).
 
 ## Como Funciona
+
+# Joi Patrio - Monitoramento de Performance com New Relic
+
+Este projeto, **Joi Patrio**, tem como objetivo destacar a importância do patrimônio histórico de Joinville, utilizando uma plataforma web interativa para explorar casarões históricos. Para garantir a melhor experiência possível aos usuários e otimizar o desempenho da aplicação, utilizamos o **New Relic**.
+
+## Monitoramento de Performance com New Relic
+
+O **New Relic** foi integrado ao projeto para monitorar em tempo real o desempenho da aplicação. Ele permite coletar métricas vitais sobre o tempo de resposta, erros e o comportamento do sistema em diferentes pontos, proporcionando insights valiosos para otimizar o desempenho e a experiência do usuário.
+
+### Por que usei o New Relic?
+
+A performance de uma aplicação web é essencial para garantir que os usuários tenham uma experiência fluida e sem interrupções. No **Joi Patrio**, o New Relic é utilizado para:
+
+- **Monitorar o tempo de resposta**: Garantir que as páginas carreguem rapidamente, especialmente as seções interativas com informações detalhadas sobre os casarões históricos.
+- **Identificar erros**: Detectar e resolver problemas rapidamente, como falhas no carregamento de imagens ou dados dinâmicos.
+- **Analisar a infraestrutura**: Monitorar o uso de recursos do servidor e otimizar os pontos críticos.
+
+### Link para o New Relic
+
+Você pode visualizar o desempenho do projeto **Joi Patrio** em tempo real acessando o painel do New Relic:  
+[Link para o New Relic](https://onenr.io/0gR7mpXJkQo)  
+
+
+---
+
+## Como Funciona
+
+O New Relic foi integrado ao projeto no lado do servidor e do cliente, permitindo o monitoramento completo da aplicação.
+
+
 O frontend é um aplicativo React servido por Nginx.
 
 O backend é uma API Node.js que interage com o banco de dados MySQL.
