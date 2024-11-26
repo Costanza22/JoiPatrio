@@ -81,7 +81,7 @@ function App() {
     <div className="button-container">
       <a href="index.html" target="_blank" rel="noopener noreferrer">
       <button className="styled-button" 
-  onClick={() => window.location.href = 'https://jolly-beach-0238f9a1e.5.azurestaticapps.net/'}>
+  onClick={() => window.location.href = 'joinville-version.vercel.app/'}>
   <strong>Acesse!</strong>
 </button>
 
