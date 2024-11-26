@@ -78,12 +78,15 @@ function App() {
           <p>Descubra a rica história de Joinville através de seus casarões históricos. Minha missão ao criar este site foi preservar e valorizar o patrimônio cultural da cidade, oferecendo uma experiência única que conecta passado e presente. Explore cada detalhe e conheça as histórias que moldaram a identidade de Joinville.</p>
 
 
-    <div className="button-container">
-      <a href="index.html" target="_blank" rel="noopener noreferrer">
-      <button className="styled-button" 
-  onClick={() => window.location.href = 'joinville-version.vercel.app/'}>
-  <strong>Acesse!</strong>
-</button>
+          <div className="button-container">
+  <a 
+    href="https://joinville-version.vercel.app/" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    <button className="styled-button">
+      <strong>Acesse!</strong>
+    </button>
 
       </a>
     </div>
