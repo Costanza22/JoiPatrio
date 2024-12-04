@@ -62,22 +62,28 @@ O desenvolvimento da plataforma não incluirá a implementação de programas ed
 
 O diagrama abaixo representa os principais casos de uso do sistema *Joi Patrio* e como os usuários (Visitante e Administrador) interagem com o sistema:
 
-- **Visitante**: Pode fazer login, marcar casarões como favoritos, deixar comentários, e visualizar o blog.
-- **Administrador**: Pode registrar novos casarões, gerenciar informações e editar os dados dos casarões.
+- **Visitante**: Pode fazer login, marcar casarões como favoritos, deixar comentários, marcar como visitado e sugerir novos.
+- **Administrador**: Pode registrar novos casarões,editar e excluir, receber as sugestões
 
-![diagrama 4](https://github.com/user-attachments/assets/711ce6b0-e403-4c9c-b9ba-52ed49295ae8)
-
+![use case](https://github.com/user-attachments/assets/7964998a-3456-4637-ad2e-eb765b7ee1ed)
 
 ## Casos de Uso (CU) com os Atores
 
-| **Caso de Uso**                          | **Descrição**                                                                                                     | **Atores Envolvidos**      |
-|------------------------------------------|-------------------------------------------------------------------------------------------------------------------|-----------------------------|
-| **CU01**: Registrar casarões históricos   | Permite registrar informações detalhadas sobre casarões históricos, incluindo fotos e localização.                | Administrador               |
-| **CU02**: Autenticação de Usuário         | Implementa o login e autenticação para permitir acesso de visitantes e administradores.                          | Visitante, Administrador    |
-| **CU03**: Marcar Favoritos                | Permite aos usuários marcar casarões como favoritos para acesso rápido.                                          | Visitante                   |
-| **CU04**: Gerenciar Informações de Casarões | Permite ao administrador adicionar, editar ou remover informações e imagens de casarões históricos.              | Administrador               |
-| **CU05**: Comentários e Feedback          | Permite que os visitantes compartilhem suas opiniões sobre cada casarão.                                         | Visitante                   |
-| **CU06**: Visualizar Blog                 | Visitantes podem acessar a seção de blog sobre patrimônio histórico e ler publicações.                           | Visitante, Administrador    |
+## Casos de Uso
+
+| **Caso de Uso**            | **Descrição**                                                                 | **Atores Envolvidos**       |
+|-----------------------------|-------------------------------------------------------------------------------|-----------------------------|
+| **Login como Administrador** | Permite ao administrador acessar o sistema com suas credenciais.             | Administrador              |
+| **Login como Visitante**    | Permite ao visitante acessar o sistema com suas credenciais.                  | Visitante                  |
+| **Selecionar Função**       | No processo de login, o usuário escolhe se deseja acessar como administrador ou visitante. | Administrador, Visitante  |
+| **Cadastrar Casarão**       | Permite ao administrador adicionar um novo casarão ao sistema.                | Administrador              |
+| **Excluir Casarão**         | Permite ao administrador remover um casarão do sistema.                       | Administrador              |
+| **Editar Casarão**          | Permite ao administrador modificar as informações de um casarão existente.    | Administrador              |
+| **Receber Sugestão**        | Permite ao administrador visualizar as sugestões enviadas pelos visitantes.    | Administrador              |
+| **Sugerir Casarão**         | Permite ao visitante enviar uma sugestão de casarão para o administrador.     | Visitante                  |
+| **Visualizar Casarão**      | Permite ao visitante acessar a lista e os detalhes dos casarões cadastrados.  | Visitante                  |
+| **Marcar como Favorito**    | Permite ao visitante marcar um casarão como favorito para facilitar o acesso posterior. | Visitante          |
+| **Marcar como Visitado**    | Permite ao visitante indicar que já visitou determinado casarão.               | Visitante                  |
 
 
 ## Padrões de Arquitetura:
