@@ -44,8 +44,7 @@ O desenvolvimento da plataforma não incluirá a implementação de programas ed
   3.Permitir que os usuários marquem casarões como favoritos para acesso rápido posterior.         |
 | 4. Implementar sistema de login para administradores e visitantes.                                    |
 | 5. Permitir que os administradores adicionem, editem ou removam informações e imagens sobre casarões.                                   |
-| 6. Implementar um sistema de comentários ou feedback, permitindo que visitantes compartilhem opiniões sobre cada casarão.                      |          |
-| 7. Implementar uma seção de blog sobre patrimônio histórico.                                          |
+|                                |
           
                 
 
