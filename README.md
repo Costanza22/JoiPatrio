@@ -62,8 +62,8 @@ O desenvolvimento da plataforma não incluirá a implementação de programas ed
 
 O diagrama abaixo representa os principais casos de uso do sistema *Joi Patrio* e como os usuários (Visitante e Administrador) interagem com o sistema:
 
-- **Visitante**: Pode fazer login, marcar casarões como favoritos, deixar comentários, marcar como visitado e sugerir novos.
-- **Administrador**: Pode registrar novos casarões,editar e excluir, receber as sugestões
+- **Visitante**: marcar casarões como favoritos, deixar comentários, marcar como visitado e sugerir novos.
+- **Administrador**: registrar novos casarões,editar e excluir, receber as sugestões
 
 ![use case](https://github.com/user-attachments/assets/7964998a-3456-4637-ad2e-eb765b7ee1ed)
 
@@ -72,10 +72,7 @@ O diagrama abaixo representa os principais casos de uso do sistema *Joi Patrio* 
 ## Casos de Uso
 
 | **Caso de Uso**            | **Descrição**                                                                 | **Atores Envolvidos**       |
-|-----------------------------|-------------------------------------------------------------------------------|-----------------------------|
-| **Login como Administrador** | Permite ao administrador acessar o sistema com suas credenciais.             | Administrador              |
-| **Login como Visitante**    | Permite ao visitante acessar o sistema com suas credenciais.                  | Visitante                  |
-| **Selecionar Função**       | No processo de login, o usuário escolhe se deseja acessar como administrador ou visitante. | Administrador, Visitante  |
+|-----------------------------|-------------------------------------------------------------------------------|-----------------------------|          |
 | **Cadastrar Casarão**       | Permite ao administrador adicionar um novo casarão ao sistema.                | Administrador              |
 | **Excluir Casarão**         | Permite ao administrador remover um casarão do sistema.                       | Administrador              |
 | **Editar Casarão**          | Permite ao administrador modificar as informações de um casarão existente.    | Administrador              |
