@@ -116,17 +116,6 @@ https://github.com/Costanza22/joinville-version
 
 Para melhor organização!
 
-## Aplicação do Método KISS no Joi Patrio
-O projeto Joi Patrio foi desenvolvido com base no método KISS (Keep It Simple, Stupid), priorizando a simplicidade no design e na implementação para garantir eficiência e fácil compreensão.
-
-Como Foi Aplicado?
-
-Design Intuitivo: Interface limpa e direta, com foco em imagens e informações essenciais sobre os casarões históricos.
-
-Código Enxuto: Componentes reutilizáveis em React e dependências limitadas às essenciais, como react-icons e react-router-dom.
-
-Funcionalidades Prioritárias: Busca com sugestões, login simplificado e acesso rápido aos casarões atendem o objetivo principal.
-
 ## Benefícios
 Manutenção Facilitada: Código organizado e de fácil evolução.
 
