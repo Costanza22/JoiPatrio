@@ -42,11 +42,12 @@ O desenvolvimento da plataforma não incluirá a implementação de programas ed
 | 1. Permitir o registro de informações detalhadas sobre casarões históricos, incluindo fotos e localização. |
 | 2. Permitir que os usuários marquem casarões como favoritos para acesso rápido posterior.              |
 | 3. Permitir que os administradores adicionem, editem ou removam informações e imagens sobre casarões.  |
-| 4. Permitir que os visitantes enviem sugestões de novos casarões para serem cadastrados.               |
-| 5. Permitir que os visitantes visualizem a lista de casarões cadastrados, incluindo detalhes completos.|
-| 6. Permitir que os visitantes indiquem quais casarões já visitaram.                                    |
-| 7. Disponibilizar uma funcionalidade de busca para encontrar casarões pelo nome ou localização.        |
-| 8. Permitir que os usuários visualizem um mapa virtual com a localização dos casarões usando Google Maps ou OpenStreetMap. |
+| 4. Permitir que os administradores recebam sugestões de novos casarões enviadas pelos visitantes.      |
+| 5. Permitir que os visitantes enviem sugestões de novos casarões para serem cadastrados.               |
+| 6. Permitir que os visitantes visualizem a lista de casarões cadastrados, incluindo detalhes completos.|
+| 7. Permitir que os visitantes indiquem quais casarões já visitaram.                                    |
+| 8. Disponibilizar uma funcionalidade de busca para encontrar casarões pelo nome ou localização.        |
+| 9. Permitir que os usuários visualizem um mapa virtual com a localização dos casarões usando Google Maps ou OpenStreetMap. |
 
 ## Requisitos Não-Funcionais (RNF)
 
@@ -57,16 +58,17 @@ O desenvolvimento da plataforma não incluirá a implementação de programas ed
 | 3. A aplicação deve ter um tempo de resposta rápido para buscas e carregamento de informações.        |
 | 4. Garantir a segurança das informações dos usuários, especialmente no login e no cadastro.          |
 | 5. Acessibilidade para usuários com deficiência, garantindo que todos os elementos possam ser utilizados. |
+|
 
 
 ## Casos de Uso
 
-O diagrama abaixo representa os principais casos de uso do sistema *Joi Patrio* e como os usuários (Visitante e Administrador) interagem com o sistema:
+## Diagrama de Visitante
+![visitante uml](https://github.com/user-attachments/assets/a5e085fa-cb52-470f-94de-7f33bc89474d)
 
-- **Visitante**: marcar casarões como favoritos, deixar comentários, marcar como visitado e sugerir novos.
-- **Administrador**: registrar novos casarões,editar e excluir, receber as sugestões
+## Diagrama de Administrador
 
-![use case](https://github.com/user-attachments/assets/7964998a-3456-4637-ad2e-eb765b7ee1ed)
+![admin uml](https://github.com/user-attachments/assets/4193e957-482c-4369-8f5b-af6d7a255aa2)
 
 ## Casos de Uso
 
