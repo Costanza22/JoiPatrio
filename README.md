@@ -67,20 +67,21 @@ O diagrama abaixo representa os principais casos de uso do sistema *Joi Patrio* 
 
 ![use case](https://github.com/user-attachments/assets/7964998a-3456-4637-ad2e-eb765b7ee1ed)
 
-## Casos de Uso (CU) com os Atores
-
 ## Casos de Uso
 
-| **Caso de Uso**            | **Descrição**                                                                 | **Atores Envolvidos**       |
-|-----------------------------|-------------------------------------------------------------------------------|-----------------------------|          |
-| **Cadastrar Casarão**       | Permite ao administrador adicionar um novo casarão ao sistema.                | Administrador              |
-| **Excluir Casarão**         | Permite ao administrador remover um casarão do sistema.                       | Administrador              |
-| **Editar Casarão**          | Permite ao administrador modificar as informações de um casarão existente.    | Administrador              |
-| **Receber Sugestão**        | Permite ao administrador visualizar as sugestões enviadas pelos visitantes.    | Administrador              |
-| **Sugerir Casarão**         | Permite ao visitante enviar uma sugestão de casarão para o administrador.     | Visitante                  |
-| **Visualizar Casarão**      | Permite ao visitante acessar a lista e os detalhes dos casarões cadastrados.  | Visitante                  |
-| **Marcar como Favorito**    | Permite ao visitante marcar um casarão como favorito para facilitar o acesso posterior. | Visitante          |
-| **Marcar como Visitado**    | Permite ao visitante indicar que já visitou determinado casarão.               | Visitante                  |
+| **Caso de Uso**          | **Descrição**                                                                 | **Atores Envolvidos**       |
+|---------------------------|-------------------------------------------------------------------------------|-----------------------------|
+| **Cadastrar Casarão**     | Permite ao administrador adicionar um novo casarão ao sistema.               | Administrador              |
+| **Excluir Casarão**       | Permite ao administrador remover um casarão do sistema.                      | Administrador              |
+| **Editar Casarão**        | Permite ao administrador modificar as informações de um casarão existente.   | Administrador              |
+| **Receber Sugestão**      | Permite ao administrador visualizar as sugestões enviadas pelos visitantes.  | Administrador              |
+| **Sugerir Casarão**       | Permite ao visitante enviar uma sugestão de casarão para o administrador.    | Visitante                  |
+| **Visualizar Casarão**    | Permite ao visitante acessar a lista e os detalhes dos casarões cadastrados. | Visitante                  |
+| **Marcar como Favorito**  | Permite ao visitante marcar um casarão como favorito para facilitar o acesso posterior. | Visitante          |
+| **Marcar como Visitado**  | Permite ao visitante indicar que já visitou determinado casarão.              | Visitante                  |
+
+
+
 
 
 ## Padrões de Arquitetura:
